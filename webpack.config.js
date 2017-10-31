@@ -17,11 +17,17 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                    options: { presets: ['env'] }
                 }
             },
             {
-                test: /\.ttf$/,
+                test: /\.js$/,
+                include: /react-hardback-book/,
+                use: {
+                    loader: 'babel-loader',
+                }
+            },
+            {
+                test: /\.(ttf|png|gif|jpg)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'file-loader',
