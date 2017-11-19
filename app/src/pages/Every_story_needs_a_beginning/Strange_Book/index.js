@@ -6,7 +6,7 @@ import InnerCover from './InnerCover'
 import MyPage from './MyPage';
 import BackCover from './BackCover';
 
-import dancingGhost from './imgs/dancingGhost.gif'
+import dancingGhost from './assets/dancingGhost.gif'
 
 export function Strange_Book() {
     return (

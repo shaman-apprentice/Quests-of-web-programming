@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import backgroundImgForLeftPage from './imgs/oldLeftPage.jpg'
-import backgroundImgForRightPage from './imgs/oldRightPage.jpg'
+import backgroundImgForLeftPage from './assets/oldLeftPage.jpg'
+import backgroundImgForRightPage from './assets/oldRightPage.jpg'
 
 const StyledMyPage = styled.div`
     height: 100%;

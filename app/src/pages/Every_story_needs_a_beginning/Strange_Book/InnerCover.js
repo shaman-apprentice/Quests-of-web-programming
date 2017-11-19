@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import backgroundImg from '!url-loader!./imgs/InnerCover.jpg'
+import backgroundImg from '!url-loader!./assets/InnerCover.jpg'
 
 const StyledOuterCover = styled.div`
     height: 100%;

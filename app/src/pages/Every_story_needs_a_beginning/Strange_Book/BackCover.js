@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import backgroundImg from '!url-loader!./imgs/BackCover.jpg'
+import backgroundImg from '!url-loader!./assets/BackCover.jpg'
 
 const StyledBackCover = styled.div`
     height: 100%;
