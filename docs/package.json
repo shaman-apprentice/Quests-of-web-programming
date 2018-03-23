@@ -9,9 +9,12 @@
     "start": "webpack --watch"
   },
   "devDependencies": {
+    "@types/react": "^16.0.40",
+    "@types/react-dom": "^16.0.4",
     "awesome-typescript-loader": "3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "svg-inline-loader": "^0.8.0",
     "typescript": "^2.7.2",
     "webpack": "3"
   }

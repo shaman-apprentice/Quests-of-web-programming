@@ -11,6 +11,10 @@ module.exports = {
           {
               test: /\.[tj]sx?$/,
               use: 'awesome-typescript-loader',
+          },
+          {
+              test: /\.svg$/,
+              loader: 'svg-inline-loader'
           }
       ]
     }

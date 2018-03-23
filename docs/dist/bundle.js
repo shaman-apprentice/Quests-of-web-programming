@@ -871,11 +871,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__routes_every_story_needs_a_beginning__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_header__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes_every_story_needs_a_beginning__ = __webpack_require__(30);
 
 
 
-Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2__routes_every_story_needs_a_beginning__["a" /* Every_story_needs_a_beginning */], null), document.getElementById('root'));
+
+function App() {
+    return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_0_react__["Fragment"], null,
+        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2__components_header__["a" /* Header */], null),
+        __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_3__routes_every_story_needs_a_beginning__["a" /* Every_story_needs_a_beginning */], null)));
+}
+Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](App, null), document.getElementById('root'));
 
 
 /***/ }),
@@ -19276,14 +19283,55 @@ module.exports = camelize;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__table_of_contents_svg__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__table_of_contents_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__table_of_contents_svg__);
+
+
+class Header extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
+    constructor() {
+        super(...arguments);
+        this.state = {
+            is_table_of_contents_shown: false,
+        };
+        this.toggle_table_of_contents = () => this.setState({
+            is_table_of_contents_shown: !this.state.is_table_of_contents_shown
+        });
+    }
+    render() {
+        return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { onClick: this.toggle_table_of_contents },
+            __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("h2", null, "Quests of Web Programming"),
+            this.state.is_table_of_contents_shown ?
+                __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", { dangerouslySetInnerHTML: { __html: __WEBPACK_IMPORTED_MODULE_1__table_of_contents_svg___default.a } }) :
+                null));
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Header;
+
+
+
+/***/ }),
+/* 28 */,
+/* 29 */,
+/* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = Every_story_needs_a_beginning;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 function Every_story_needs_a_beginning() {
-    return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null, "once upon the time..."));
+    return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null, "once upon a time..."));
 }
 
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+module.exports = "<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:svg=\"http://www.w3.org/2000/svg\" xmlns=\"http://www.w3.org/2000/svg\" id=\"map\" version=\"1.1\" viewBox=\"0 0 507.99999 285.75001\"><defs id=\"defs3699\"></defs><metadata id=\"metadata3702\"><rdf:RDF><cc:Work rdf:about><dc:format>image/svg+xml</dc:format><dc:type rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\"></dc><dc:title></dc:title></cc:Work></rdf:RDF></metadata><g transform=\"translate(0,-11.249983)\" id=\"layer1\"><g id=\"Test\" style=\"font-style:normal;font-weight:normal;font-size:85.33332825px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none\" transform=\"matrix(0.26458334,0,0,0.26458334,0,11.249983)\" aria-label=\"Test\"><path id=\"path28\" d=\"m 222.60742,227.57682 h 52.625 v 7.08334 h -22.08333 v 55.12499 h -8.45834 v -55.12499 h -22.08333 z\"></path><path id=\"path30\" d=\"m 308.48242,264.53515 v 3.75 h -35.25 q 0.5,7.91667 4.75,12.08334 4.29166,4.125 11.91666,4.125 4.41667,0 8.54167,-1.08334 4.16667,-1.08333 8.25,-3.25 v 7.25 q -4.125,1.75 -8.45833,2.66667 -4.33334,0.91667 -8.79167,0.91667 -11.16667,0 -17.70833,-6.5 -6.5,-6.5 -6.5,-17.58334 0,-11.45833 6.16667,-18.16666 6.20833,-6.75 16.70833,-6.75 9.41666,0 14.875,6.08333 5.5,6.04167 5.5,16.45833 z m -7.66667,-2.25 q -0.0833,-6.29166 -3.54167,-10.04166 -3.41666,-3.75 -9.08333,-3.75 -6.41667,0 -10.29167,3.625 -3.83333,3.625 -4.41666,10.20833 z\"></path><path id=\"path32\" d=\"m 350.81574,244.49349 v 7.25 q -3.25,-1.66667 -6.75,-2.5 -3.5,-0.83334 -7.25,-0.83334 -5.70833,0 -8.58333,1.75 -2.83333,1.75 -2.83333,5.25 0,2.66667 2.04166,4.20834 2.04167,1.5 8.20834,2.875 l 2.625,0.58333 q 8.16666,1.75 11.58333,4.95833 3.45833,3.16667 3.45833,8.875 0,6.5 -5.16666,10.29167 -5.125,3.79167 -14.125,3.79167 -3.75,0 -7.83334,-0.75 -4.04166,-0.70834 -8.54166,-2.16667 v -7.91667 q 4.25,2.20834 8.375,3.33334 4.125,1.08333 8.16666,1.08333 5.41667,0 8.33334,-1.83333 2.91666,-1.875 2.91666,-5.25 0,-3.125 -2.125,-4.79167 -2.08333,-1.66667 -9.20833,-3.20833 l -2.66667,-0.625 q -7.125,-1.5 -10.29166,-4.58334 -3.16667,-3.125 -3.16667,-8.54166 0,-6.58334 4.66667,-10.16667 4.66666,-3.58333 13.25,-3.58333 4.25,0 8,0.625 3.75,0.625 6.91666,1.875 z\"></path><path id=\"path34\" d=\"m 373.14908,229.86849 v 13.25 h 15.79166 v 5.95833 h -15.79166 v 25.33333 q 0,5.70834 1.54166,7.33334 1.58334,1.625 6.375,1.625 h 7.875 v 6.41666 h -7.875 q -8.875,0 -12.25,-3.29166 -3.375,-3.33334 -3.375,-12.08334 v -25.33333 h -5.625 v -5.95833 h 5.625 v -13.25 z\"></path></g></g></svg>"
 
 /***/ })
 /******/ ]);
