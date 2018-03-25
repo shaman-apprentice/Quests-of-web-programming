@@ -1,6 +1,7 @@
 import * as React from 'react'
 
-import table_of_contents from './table_of_contents.svg';
+import { Styled_Heading } from './Styled_Heading'
+import { Table_of_contents } from '../Table_of_contents'
 
 export class Header extends React.Component {
     state = {
@@ -15,11 +16,8 @@ export class Header extends React.Component {
     render() {
         return (
             <div onClick={this.toggle_table_of_contents}>
-                <h2>Quests of Web Programming</h2>
-                { this.state.is_table_of_contents_shown ?
-                    <div dangerouslySetInnerHTML={{ __html: table_of_contents }} /> :
-                    null
-                }
+                <Styled_Heading>Quests of Web Programming</Styled_Heading>
+                <Table_of_contents isOpen={this.state.is_table_of_contents_shown} />
             </div>
         );
     }
