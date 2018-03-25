@@ -1,16 +1,19 @@
 import * as React from 'react'
 import { render } from 'react-dom'
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { Header } from './components/Header'
-import { Every_story_needs_a_beginning } from './routes/Every_story_needs_a_beginning'
+import { Routes } from './Routes'
 
-// body style / margin/padding=0 set in index.html
+// body style (margin/padding=0) is set in index.html
 function App() {
     return (
-        <>
-            <Header />
-            <Every_story_needs_a_beginning />
-        </>
+        <Router basename={'/Quests-of-web-programming/docs'}>
+            <div>
+                <Header />
+                <Routes />
+            </div>
+        </Router>
     );
 }
 
