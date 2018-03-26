@@ -6,12 +6,15 @@
   "author": "Torsten Knauf <Torsten.Knauf@gmx.de>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack --watch"
+    "frontend": "webpack --watch",
+    "backend": "node ./local_dev_server.js",
+    "start": "concurrently --kill-others \"yarn frontend\" \"yarn backend\""
   },
   "devDependencies": {
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
     "awesome-typescript-loader": "3",
+    "concurrently": "^3.5.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
