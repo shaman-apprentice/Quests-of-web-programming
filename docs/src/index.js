@@ -15,10 +15,10 @@ const basename = _is_hosted_on_GitHubPages(window.location.origin) ?
 function App() {
     return (
         <Router basename={basename}>
-            <div>
+            <>
                 <Header />
                 <Routes />
-            </div>
+            </>
         </Router>
     );
 }

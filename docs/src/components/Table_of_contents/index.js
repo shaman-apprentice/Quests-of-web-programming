@@ -3,21 +3,17 @@ import { withRouter } from 'react-router-dom'
 
 import { Styled_Opening_Mechanism } from './Styled_Opening_Mechanism'
 import table_of_contents_svg from './table_of_contents.svg'
+import { routes_config } from './routes_config'
 
-export const CHAPTERS = [
-    'Every_story_needs_a_beginning',
-];
-
-
-// TODO props / typescript
-// TODO not withRouter
-class Table_of_contentsWithoutRouter extends React.Component {
+// todo prop-types / typescript
+class Table_of_contents_without_router extends React.Component {
 
     componentDidMount() {
-        for (let chapter of CHAPTERS) {
-            document.getElementById(chapter)
+        for (let route of routes_config) {
+            const node = document.getElementById(route.name);
+            node && node
                 .addEventListener("click", () =>
-                    this.props.history.push(chapter)
+                    this.props.history.push(route.name)
                 );
         }
     }
@@ -31,4 +27,4 @@ class Table_of_contentsWithoutRouter extends React.Component {
         );
     }
 }
-export const Table_of_contents = withRouter(Table_of_contentsWithoutRouter);
+export const Table_of_contents = withRouter(Table_of_contents_without_router);
