@@ -868,7 +868,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 function Routes() {
     return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Switch */], null, ROUTES);
 }
-const ROUTES = __WEBPACK_IMPORTED_MODULE_2__components_Table_of_contents_routes_config__["a" /* routes_config */].map(r => __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { key: r.name, exact: r.exact !== false, path: r.path ? r.path : `/${r.name}`, component: __webpack_require__(92)(`./${r.name}`)[r.name] }));
+const ROUTES = __WEBPACK_IMPORTED_MODULE_2__components_Table_of_contents_routes_config__["a" /* routes_config */].map((r) => __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { key: r.name, exact: r.exact !== false, path: r.path ? r.path : `/${r.name}`, component: __webpack_require__(92)(`./${r.name}`)[r.name] }));
 
 
 /***/ }),
@@ -3990,7 +3990,6 @@ var styled = _styled(StyledComponent, constructWithOptions);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// todo typescript
 const routes_config = [
     {
         name: 'About_me',
@@ -4031,7 +4030,7 @@ function _is_hosted_on_GitHubPages(origin) {
     return origin.includes('shaman-apprentice.github.io');
 }
 const basename = _is_hosted_on_GitHubPages(window.location.origin) ?
-    '/Quests-of-web-programming' : // project name
+    '/Quests-of-web-programming' : // GitHub project name
     '/'; // served from local_dev_server
 function App() {
     return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */], { basename: basename },
@@ -27287,26 +27286,28 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Styled_Opening_Mechanism__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__table_of_contents_svg__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__table_of_contents_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__table_of_contents_svg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__routes_config__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Styled_opening_mechanism__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes_config__ = __webpack_require__(40);
 
 
 
 
-
-// todo prop-types / typescript
+const table_of_contents_svg = __webpack_require__(91);
 class Table_of_contents_without_router extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     componentDidMount() {
-        for (let route of __WEBPACK_IMPORTED_MODULE_4__routes_config__["a" /* routes_config */]) {
+        for (let route of __WEBPACK_IMPORTED_MODULE_3__routes_config__["a" /* routes_config */]) {
             const node = document.getElementById(route.name);
-            node && node
-                .addEventListener("click", () => this.props.history.push(route.name));
+            if (node) {
+                node.addEventListener("click", () => this.props.history.push(route.name));
+            }
+            else {
+                console.warn('For the following route no svg-img could be found:');
+                console.warn(route);
+            }
         }
     }
     render() {
-        return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2__Styled_Opening_Mechanism__["a" /* Styled_Opening_Mechanism */], { isOpen: this.props.isOpen, dangerouslySetInnerHTML: { __html: __WEBPACK_IMPORTED_MODULE_3__table_of_contents_svg___default.a } }));
+        return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2__Styled_opening_mechanism__["a" /* Styled_opening_mechanism */], { isOpen: this.props.isOpen, dangerouslySetInnerHTML: { __html: table_of_contents_svg } }));
     }
 }
 const Table_of_contents = Object(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["d" /* withRouter */])(Table_of_contents_without_router);
@@ -27321,7 +27322,7 @@ const Table_of_contents = Object(__WEBPACK_IMPORTED_MODULE_1_react_router_dom__[
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_styled_components__ = __webpack_require__(39);
 
-const Styled_Opening_Mechanism = __WEBPACK_IMPORTED_MODULE_0_styled_components__["b" /* default */].div `
+const Styled_opening_mechanism = __WEBPACK_IMPORTED_MODULE_0_styled_components__["b" /* default */].div.attrs({}) `
   position: absolute;
   transition: top 2s;
   top: 0px;
@@ -27331,7 +27332,7 @@ const Styled_Opening_Mechanism = __WEBPACK_IMPORTED_MODULE_0_styled_components__
       top: -1020px;
   `}
 `;
-/* harmony export (immutable) */ __webpack_exports__["a"] = Styled_Opening_Mechanism;
+/* harmony export (immutable) */ __webpack_exports__["a"] = Styled_opening_mechanism;
 
 
 
@@ -27360,7 +27361,7 @@ var map = {
 	"./Not_found/index": 16,
 	"./Not_found/index.js": 16,
 	"./index": 13,
-	"./index.js": 13
+	"./index.tsx": 13
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));

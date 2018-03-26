@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Styled_Heading } from './Styled_Heading'
 import { Table_of_contents } from '../Table_of_contents'
 
-export class Header extends React.Component {
+export class Header extends React.Component<{}, {is_table_of_contents_shown: boolean}> {
     state = {
         is_table_of_contents_shown: false,
     };

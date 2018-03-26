@@ -9,7 +9,7 @@ function _is_hosted_on_GitHubPages(origin) {
     return origin.includes('shaman-apprentice.github.io');
 }
 const basename = _is_hosted_on_GitHubPages(window.location.origin) ?
-    '/Quests-of-web-programming' : // project name
+    '/Quests-of-web-programming' : // GitHub project name
     '/'; // served from local_dev_server
 
 function App() {

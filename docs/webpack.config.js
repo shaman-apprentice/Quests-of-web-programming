@@ -17,5 +17,8 @@ module.exports = {
               loader: 'svg-inline-loader'
           }
       ]
-    }
+    },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx']
+    },
 };
