@@ -878,8 +878,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(18);
 
 
-// TODO basename depending on local or GitHubPages
-// TODO on initial page load, route doesn't exist?
 function Routes() {
     return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* Switch */], null, ROUTES);
 }
@@ -3992,9 +3990,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-const basename = window.location.origin.includes('shaman-apprentice.github.io') ?
-    '/Quests-of-web-programming' :
-    '/Quests-of-web-programming/docs';
+function _is_hosted_on_GitHubPages(origin) {
+    return origin.includes('shaman-apprentice.github.io');
+}
+const basename = _is_hosted_on_GitHubPages(window.location.origin) ?
+    '/Quests-of-web-programming' : // project name
+    '/'; // served from local_dev_server
 // body style (margin/padding=0) is set in index.html
 function App() {
     return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */], { basename: basename },

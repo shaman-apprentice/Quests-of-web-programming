@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { Route, Switch } from "react-router-dom";
 
-// TODO basename depending on local or GitHubPages
-// TODO on initial page load, route doesn't exist?
 export function Routes() {
     return <Switch>{ ROUTES }</Switch>;
 }

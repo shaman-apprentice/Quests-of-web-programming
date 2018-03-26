@@ -5,9 +5,12 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Header } from './components/Header'
 import { Routes } from './Routes'
 
-const basename = window.location.origin.includes('shaman-apprentice.github.io') ?
-    '/Quests-of-web-programming' :
-    '/Quests-of-web-programming/docs';
+function _is_hosted_on_GitHubPages(origin) {
+    return origin.includes('shaman-apprentice.github.io');
+}
+const basename = _is_hosted_on_GitHubPages(window.location.origin) ?
+    '/Quests-of-web-programming' : // project name
+    '/'; // served from local_dev_server
 
 // body style (margin/padding=0) is set in index.html
 function App() {
