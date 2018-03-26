@@ -1,6 +1,8 @@
 const http = require('http');
 const fs = require('fs');
 
+/** This minimal static server should behave like the one from GitHub pages,
+ *  for developing suppose */
 const dev_server = http.createServer(function (req, res) {
     let requested_resource = req.url;
 
