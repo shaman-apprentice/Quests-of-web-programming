@@ -12,7 +12,6 @@ const basename = _is_hosted_on_GitHubPages(window.location.origin) ?
     '/Quests-of-web-programming' : // project name
     '/'; // served from local_dev_server
 
-// body style (margin/padding=0) is set in index.html
 function App() {
     return (
         <Router basename={basename}>
@@ -24,4 +23,4 @@ function App() {
     );
 }
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root')); // body style (margin/padding=0) is set in index.html

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export function notFound() {
+export function Not_found() {
     return (
         <div>404</div>
     );

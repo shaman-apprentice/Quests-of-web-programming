@@ -17,4 +17,5 @@ const ROUTES = NAME_OF_ROUTES.map( name =>
         component={require(`./${name}`)[name]}
     />
 );
-ROUTES.push(<Route key="notFound" component={require(`./notFound`)['notFound']} />);
+ROUTES.push(<Route key="About_me" exact path="/(index)?(index.html)?" component={require(`./About_me`)['About_me']} />);
+ROUTES.push(<Route key="Not_found" component={require(`./Not_found`)['Not_found']} />);

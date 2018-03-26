@@ -686,21 +686,7 @@ var createPath = function createPath(location) {
 
 
 /***/ }),
-/* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (immutable) */ __webpack_exports__["notFound"] = notFound;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-
-function notFound() {
-    return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null, "404"));
-}
-
-
-/***/ }),
+/* 10 */,
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -885,7 +871,8 @@ const NAME_OF_ROUTES = [
     'Every_story_needs_a_beginning',
 ];
 const ROUTES = NAME_OF_ROUTES.map(name => __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { key: name, exact: true, path: `/${name}`, component: __webpack_require__(90)(`./${name}`)[name] }));
-ROUTES.push(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { key: "notFound", component: __webpack_require__(10)['notFound'] }));
+ROUTES.push(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { key: "About_me", exact: true, path: "/(index)?(index.html)?", component: __webpack_require__(93)['About_me'] }));
+ROUTES.push(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Route */], { key: "Not_found", component: __webpack_require__(92)['Not_found'] }));
 
 
 /***/ }),
@@ -3996,14 +3983,13 @@ function _is_hosted_on_GitHubPages(origin) {
 const basename = _is_hosted_on_GitHubPages(window.location.origin) ?
     '/Quests-of-web-programming' : // project name
     '/'; // served from local_dev_server
-// body style (margin/padding=0) is set in index.html
 function App() {
     return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */], { basename: basename },
         __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null,
             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_3__components_Header__["a" /* Header */], null),
             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_4__Routes__["Routes"], null))));
 }
-Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](App, null), document.getElementById('root'));
+Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](App, null), document.getElementById('root')); // body style (margin/padding=0) is set in index.html
 
 
 /***/ }),
@@ -27314,16 +27300,20 @@ module.exports = "<svg xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:cc=\"
 
 var map = {
 	"./": 14,
+	"./About_me": 93,
+	"./About_me/": 93,
+	"./About_me/index": 93,
+	"./About_me/index.js": 93,
 	"./Every_story_needs_a_beginning": 15,
 	"./Every_story_needs_a_beginning/": 15,
 	"./Every_story_needs_a_beginning/index": 15,
 	"./Every_story_needs_a_beginning/index.js": 15,
+	"./Not_found": 92,
+	"./Not_found/": 92,
+	"./Not_found/index": 92,
+	"./Not_found/index.js": 92,
 	"./index": 14,
-	"./index.js": 14,
-	"./notFound": 10,
-	"./notFound/": 10,
-	"./notFound/index": 10,
-	"./notFound/index.js": 10
+	"./index.js": 14
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -27340,6 +27330,37 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 90;
+
+/***/ }),
+/* 91 */,
+/* 92 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["Not_found"] = Not_found;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+function Not_found() {
+    return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null, "404"));
+}
+
+
+/***/ }),
+/* 93 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (immutable) */ __webpack_exports__["About_me"] = About_me;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+function About_me() {
+    return __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null, "Hi from about me");
+}
+
 
 /***/ })
 /******/ ]);
