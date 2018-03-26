@@ -3992,9 +3992,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+const basename = window.location.origin.includes('shaman-apprentice.github.io') ?
+    '/Quests-of-web-programming' :
+    '/Quests-of-web-programming/docs';
 // body style (margin/padding=0) is set in index.html
 function App() {
-    return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */], { basename: '/Quests-of-web-programming/docs' },
+    return (__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */], { basename: basename },
         __WEBPACK_IMPORTED_MODULE_0_react__["createElement"]("div", null,
             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_3__components_Header__["a" /* Header */], null),
             __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](__WEBPACK_IMPORTED_MODULE_4__Routes__["Routes"], null))));
