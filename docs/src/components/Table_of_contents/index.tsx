@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { withRouter } from 'react-router-dom'
 
-import { Styled_opening_mechanism } from './Styled_opening_mechanism'
+import { Styled_svg } from './Styled_svg'
 import { routes_config } from './routes_config'
 
 const table_of_contents_svg = require('./table_of_contents.svg') as string;
@@ -19,9 +19,7 @@ class Table_of_contents_without_router extends React.Component<Props> {
         for (let route of routes_config) {
             const node = document.getElementById(route.name);
             if (node) {
-                node.addEventListener("click", () =>
-                    this.props.history.push(route.name)
-                );
+                node.addEventListener("click", () => this.props.history.push(route.name) );
             }
             else {
                 console.warn('For the following route no svg-img could be found:');
@@ -32,7 +30,7 @@ class Table_of_contents_without_router extends React.Component<Props> {
 
     render() {
         return (
-            <Styled_opening_mechanism
+            <Styled_svg
                 isOpen={this.props.isOpen}
                 dangerouslySetInnerHTML={{ __html: table_of_contents_svg }}
             />
