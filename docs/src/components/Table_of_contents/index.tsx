@@ -8,7 +8,7 @@ const table_of_contents_svg = require('./table_of_contents.svg') as string;
 
 interface Props {
     /** whether table of contents is shown or not */
-    isOpen: boolean;
+    is_open: boolean;
     /** history used by react-router */
     history: any;
 }
@@ -31,7 +31,7 @@ class Table_of_contents_without_router extends React.Component<Props> {
     render() {
         return (
             <Styled_svg
-                isOpen={this.props.isOpen}
+                is_open={this.props.is_open}
                 dangerouslySetInnerHTML={{ __html: table_of_contents_svg }}
             />
         );
