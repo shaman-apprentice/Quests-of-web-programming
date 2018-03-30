@@ -24,8 +24,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.62760417"
-     inkscape:cx="960"
-     inkscape:cy="540"
+     inkscape:cx="624.8856"
+     inkscape:cy="535.2882"
      inkscape:document-units="px"
      inkscape:current-layer="routes"
      showgrid="false"
@@ -383,7 +383,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -533,6 +533,8 @@
          width="50.523621"
          id="rect126"
          style="opacity:1;fill:#000000;fill-opacity:0;stroke:#1a1a1a;stroke-width:1.07356155;stroke-miterlimit:4;stroke-dasharray:none" />
+      <title
+         id="title5262">Every story needs a beginning</title>
     </g>
     <g
        id="Ghosts_of_the_past">
@@ -672,6 +674,8 @@
          id="path4995"
          d="M 199.0538,62.525105 A 32.952538,30.633867 0 0 1 166.10126,93.158972 32.952538,30.633867 0 0 1 133.14872,62.525105 32.952538,30.633867 0 0 1 166.10126,31.891237 32.952538,30.633867 0 0 1 199.0538,62.525105 Z"
          style="opacity:1;fill:#000000;fill-opacity:0;stroke:#1a1a1a;stroke-width:1.18382132;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter5016)" />
+      <title
+         id="title5472">Ghosts of the past</title>
     </g>
   </g>
 </svg>
