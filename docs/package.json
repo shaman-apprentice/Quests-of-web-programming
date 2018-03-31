@@ -13,6 +13,7 @@
   "devDependencies": {
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
+    "@types/react-router-dom": "^4.2.6",
     "awesome-typescript-loader": "3",
     "concurrently": "^3.5.1",
     "react": "^16.2.0",
