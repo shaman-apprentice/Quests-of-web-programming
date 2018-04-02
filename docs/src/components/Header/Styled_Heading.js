@@ -6,6 +6,8 @@ export const Styled_Heading = styled.h1`
   top: 0px;
   z-index: 2;
   
+  cursor: pointer;
+  
   margin: 0px;
   padding: 0.8em;
   
