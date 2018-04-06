@@ -1,7 +1,9 @@
 import * as React from 'react'
 
-import { Styled_Heading } from './Styled_Heading'
 import Table_of_contents from '../Table_of_contents'
+import { Styled_Header } from './Styled_Header'
+import { Heading } from './Heading'
+import About_link from './About_link'
 
 export class Header extends React.Component<{}, {is_table_of_contents_shown: boolean}> {
     state = {
@@ -15,16 +17,18 @@ export class Header extends React.Component<{}, {is_table_of_contents_shown: boo
 
     render() {
         return (
-            <div onClick={this.toggle_table_of_contents}>
-                <Styled_Heading
-                    title={ this.state.is_table_of_contents_shown ?
-                        undefined :
-                        'click to open table of contents'
-                    }
-                >
-                    Quests of Web Programming
-                </Styled_Heading>
-                <Table_of_contents is_open={this.state.is_table_of_contents_shown} />
+            <div>
+                <Styled_Header>
+                    <About_link />
+                    <Heading
+                        is_table_of_contents_shown={this.state.is_table_of_contents_shown}
+                        onClick={this.toggle_table_of_contents}
+                    />
+                </Styled_Header>
+                <Table_of_contents
+                    is_open={this.state.is_table_of_contents_shown}
+                    onClick={this.toggle_table_of_contents}
+                />
             </div>
         );
     }

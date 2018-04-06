@@ -11,6 +11,7 @@ interface Props extends RouteComponentProps<any> {
     is_open: boolean;
     /** history used by react-router */
     history: any;
+    onClick: any;
 }
 
 class Table_of_contents extends React.Component<Props> {
@@ -32,6 +33,7 @@ class Table_of_contents extends React.Component<Props> {
         return (
             <Styled_svg
                 is_open={this.props.is_open}
+                onClick={this.props.onClick}
                 dangerouslySetInnerHTML={{ __html: table_of_contents_svg }}
             />
         );

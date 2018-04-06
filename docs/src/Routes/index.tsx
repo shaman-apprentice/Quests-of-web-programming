@@ -1,10 +1,17 @@
 import * as React from 'react'
-import { Route, Switch } from "react-router-dom"
+import {Route, Switch} from "react-router-dom"
 
 import {RouteI, routes_config} from '../components/Table_of_contents/routes_config'
 
+
+import {Styled_route_wrapper} from './Styled_route_wrapper'
+
 export function Routes() {
-    return <Switch>{ ROUTES }</Switch>;
+    return (
+        <Styled_route_wrapper>
+            <Switch>{ ROUTES }</Switch>
+        </Styled_route_wrapper>
+    );
 }
 
 const ROUTES = routes_config.map( (r: RouteI) =>

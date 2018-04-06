@@ -9,10 +9,10 @@ export interface RouteI {
 }
 
 export const routes_config: RouteI[] = [
-/*    {
-        name: 'About_me',
-        path: '/(index)?(index.html)?', mit query map open (default / when not set - true)
-    },*/
+    {
+        name: 'About',
+        path: '/(index)?(index.html)?', // TODO mit query map open (default / when not set - true)
+    },
     {
         name: 'Every_story_needs_a_beginning',
     },
