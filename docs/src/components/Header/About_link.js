@@ -2,7 +2,6 @@ import * as React from 'react'
 import {withRouter} from 'react-router-dom'
 import styled from 'styled-components'
 
-//{'/index?table_of_contents=false'
 const About_link = (props) =>
     <Styles
         title="Link to About / Impressum"
@@ -21,6 +20,8 @@ const About_link = (props) =>
     </Styles>
 
 const Styles = styled.div`
+  z-index: 
+
   display: grid;
   grid-template-columns: 80px auto;
   grid-template-rows: 80px;
