@@ -20,8 +20,6 @@ const About_link = (props) =>
     </Styles>
 
 const Styles = styled.div`
-  z-index: 
-
   display: grid;
   grid-template-columns: 80px auto;
   grid-template-rows: 80px;
