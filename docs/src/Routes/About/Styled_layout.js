@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Styled_layout = styled.div`
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 2em;
+  grid-gap: 6em;
   padding: 1em;
   
   * > :nth-child(1) {

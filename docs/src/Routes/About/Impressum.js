@@ -1,8 +1,12 @@
 import * as React from 'react'
 
 export const Impressum = () =>
-    <div style={{textAlign: 'right'}}>
-        <h4>Impressum</h4>
+    <div style={{
+        textAlign: 'right',
+        borderLeft: '2px solid',
+        paddingLeft: '2em',
+    }}>
+        <h2>Impressum</h2>
         <div>
             Torsten Knauf <br/>
             Torsten.Knauf@gmx.de <br/>
