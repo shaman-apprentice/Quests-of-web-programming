@@ -9,8 +9,6 @@ const table_of_contents_svg = require('./table_of_contents.svg') as string;
 interface Props extends RouteComponentProps<any> {
     /** whether table of contents is shown or not */
     is_open: boolean;
-    /** history used by react-router */
-    history: any;
     onClick: any;
 }
 

@@ -1,11 +1,18 @@
 import * as React from 'react'
-import {withRouter} from 'react-router-dom'
+import {withRouter, RouteComponentProps} from 'react-router-dom'
 import styled from 'styled-components'
 
-const About_link = (props) =>
+interface Props extends RouteComponentProps<any> {
+    close_table_of_contents: Function,
+}
+
+const About_link: React.SFC<Props> = (props) =>
     <Styles
         title="Link to About / Impressum"
-        onClick={() => props.history.push('/index?table_of_contents=false')}
+        onClick={() => {
+            props.close_table_of_contents();
+            props.history.push('/index')
+        }}
     >
         <img
             src="https://avatars1.githubusercontent.com/u/3596742"

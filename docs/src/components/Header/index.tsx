@@ -15,11 +15,18 @@ export class Header extends React.Component<{}, {is_table_of_contents_shown: boo
             is_table_of_contents_shown: !this.state.is_table_of_contents_shown
         });
 
+    close_table_of_contents = () =>
+        this.setState({
+            is_table_of_contents_shown: false
+        });
+
     render() {
         return (
             <div>
                 <Styled_Header>
-                    <About_link />
+                    <About_link
+                        close_table_of_contents={this.close_table_of_contents}
+                    />
                     <Heading
                         is_table_of_contents_shown={this.state.is_table_of_contents_shown}
                         onClick={this.toggle_table_of_contents}
