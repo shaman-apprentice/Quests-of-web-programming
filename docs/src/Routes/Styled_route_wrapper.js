@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 export const Styled_route_wrapper = styled.div`
-  display: grid;
-  align-items: center;
-  justify-content: center;
+  margin: auto;
+  width: 80%;
   
   padding: 2em;
 `;
