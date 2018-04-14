@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.44378316"
-     inkscape:cx="-62.714105"
-     inkscape:cy="345.21413"
+     inkscape:zoom="0.31380208"
+     inkscape:cx="1070.063"
+     inkscape:cy="191.08252"
      inkscape:document-units="px"
      inkscape:current-layer="routes"
      showgrid="false"
@@ -675,6 +675,127 @@
          style="opacity:1;fill:#000000;fill-opacity:0;stroke:#1a1a1a;stroke-width:1.18382132;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter5016)" />
       <title
          id="title5472">Ghosts of the past</title>
+    </g>
+    <g
+       id="Tree_of_(almost)_wisdom"
+       transform="matrix(0.68794341,0,0,0.6745064,425.37688,76.441159)">
+      <g
+         id="g1282">
+        <rect
+           style="opacity:1;fill:#784421;fill-opacity:1"
+           id="rect1035"
+           width="14.308784"
+           height="93.603333"
+           x="-258.15442"
+           y="76.483948" />
+        <rect
+           style="opacity:1;fill:#aa4400;fill-opacity:1;stroke-width:0.26458335"
+           id="rect1092"
+           width="2.3847983"
+           height="67.519608"
+           x="-258.00537"
+           y="102.41863" />
+        <ellipse
+           style="opacity:1;fill:#88aa00;fill-opacity:1;stroke-width:0.26458335"
+           id="path1037"
+           cx="-251.59624"
+           cy="61.280857"
+           rx="39.945374"
+           ry="41.435871" />
+        <ellipse
+           style="opacity:1;fill:#aad400;fill-opacity:1;stroke-width:0.28542346"
+           id="path1041"
+           cx="-229.35968"
+           cy="123.88467"
+           rx="30.108082"
+           ry="33.983376"
+           transform="rotate(15.653217)" />
+        <rect
+           style="opacity:1;fill:#aa4400;fill-opacity:1;stroke-width:0.26458335"
+           id="rect1098"
+           width="0.52697098"
+           height="67.979256"
+           x="-244.51453"
+           y="102.04793" />
+        <rect
+           style="opacity:1;fill:#784421;fill-opacity:1;stroke-width:0.35902777"
+           id="rect1035-7-4"
+           width="5.9619894"
+           height="28.957357"
+           x="-44.075809"
+           y="249.27032"
+           transform="rotate(54.029824)" />
+        <rect
+           style="opacity:1;fill:#aa4400;fill-opacity:1;stroke-width:0.15765326"
+           id="rect1092-2-6"
+           width="1.9873307"
+           height="28.766851"
+           x="-44.013706"
+           y="249.39732"
+           transform="rotate(54.029824)" />
+        <rect
+           style="opacity:1;fill:#aa4400;fill-opacity:1;stroke-width:0.23368105"
+           id="rect1098-8-2"
+           width="0.96482009"
+           height="28.962687"
+           x="-39.137775"
+           y="249.23938"
+           transform="rotate(54.029824)" />
+        <ellipse
+           style="opacity:1;fill:#88aa00;fill-opacity:1;stroke-width:0.15792683"
+           id="path1037-2-8"
+           cx="-216.71857"
+           cy="102.71673"
+           rx="23.549885"
+           ry="25.040382" />
+        <rect
+           style="opacity:1;fill:#784421;fill-opacity:1;stroke-width:0.49628121"
+           id="rect1035-7-4-8"
+           width="8.4519901"
+           height="39.029285"
+           x="-278.60568"
+           y="120.62968"
+           transform="matrix(0.5879105,-0.80892598,-0.70804501,-0.70616731,0,0)" />
+        <rect
+           style="opacity:1;fill:#aa4400;fill-opacity:1;stroke-width:0.18862516"
+           id="rect1092-2-6-0"
+           width="2.4457936"
+           height="33.460777"
+           x="-282.3692"
+           y="131.96983"
+           transform="matrix(0.57319026,-0.81942231,-0.69441389,-0.71957581,0,0)" />
+        <rect
+           style="opacity:1;fill:#aa4400;fill-opacity:1;stroke-width:0.28257874"
+           id="rect1098-8-2-9"
+           width="1.1966556"
+           height="34.146641"
+           x="-271.62256"
+           y="125.72453"
+           transform="matrix(0.58746874,-0.80924686,-0.70763946,-0.7065737,0,0)" />
+        <ellipse
+           style="opacity:1;fill:#aad400;fill-opacity:1;stroke-width:0.17037307"
+           id="path1041-6-5"
+           cx="-184.12207"
+           cy="156.75163"
+           rx="17.783024"
+           ry="20.500607"
+           transform="matrix(0.96113978,0.27606218,-0.26368603,0.96460856,0,0)" />
+        <ellipse
+           style="opacity:1;fill:#88aa00;fill-opacity:1;stroke-width:0.21321787"
+           id="path1037-2"
+           cx="-287.96439"
+           cy="95.86042"
+           rx="32.194778"
+           ry="33.387177" />
+        <ellipse
+           style="opacity:1;fill:#aad400;fill-opacity:1;stroke-width:0.23001212"
+           id="path1041-6"
+           cx="-254.33299"
+           cy="167.56119"
+           rx="24.265745"
+           ry="27.38282"
+           transform="matrix(0.96293105,0.26974764,-0.26988099,0.96289369,0,0)" />
+      </g>
     </g>
   </g>
 </svg>
