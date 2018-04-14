@@ -20,7 +20,7 @@ class Table_of_contents extends React.Component<Props> {
             if (node) {
                 node.addEventListener("click", () => this.props.history.push(route.name) );
             }
-            else {
+            else if(route.has_svg !== false) {
                 console.warn('For the following route no svg-img could be found:');
                 console.warn(route);
             }

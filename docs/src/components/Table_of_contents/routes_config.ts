@@ -6,12 +6,15 @@ export interface RouteI {
     path?: string,
     /** whether path should match exact or also partially */
     exact?: boolean,
+    /** whether svg img is included in table of contents */
+    has_svg?: boolean,
 }
 
 export const routes_config: RouteI[] = [
     {
         name: 'About',
-        path: '/(index)?(index.html)?', // TODO mit query map open (default / when not set - true)
+        path: '/(index)?(index.html)?',
+        has_svg: false,
     },
     {
         name: 'Every_story_needs_a_beginning',
@@ -23,5 +26,6 @@ export const routes_config: RouteI[] = [
         name: 'Not_found',
         exact: false,
         path: '/',
+        has_svg: false,
     },
 ];
