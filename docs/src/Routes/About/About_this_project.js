@@ -30,7 +30,7 @@ export const About_this_project = () =>
             <p>
                 If you by accident stumbled over this website, or I treacherously lured you into it,
                 you can click on the header now, to open the table of contents
-                and "join" me on my <em>quest of Web Programming</em>.
+                and 'join' me on my <em>Quest of Web Programming</em>.
             </p>
         </div>
     </div>
