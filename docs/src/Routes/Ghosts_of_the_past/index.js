@@ -50,7 +50,7 @@ export const Ghosts_of_the_past = () => (
             are planed roughly every year driven by W3C and WHATWG since 2014. Same goes for ECMAScript.
         </p>
         <div>
-            <p style={{marginBottom: '-1em'}}>For a nice spooky ending below my personal 3 favorite javascript examples:</p>
+            <p style={{marginBottom: '-1em'}}>For a nice spooky ending below my personal 3 favorite javascript 'highlights':</p>
             <pre>
                 <code>
                     {`

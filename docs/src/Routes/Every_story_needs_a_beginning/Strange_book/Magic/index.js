@@ -1,7 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 
-/**  these divs as well as the css from Styled_Magic is copy pasted from https://codepen.io/heyvian/pen/oihDk */
+/**  these divs as well as the css from Styled_Magic is mainly copy pasted from https://codepen.io/heyvian/pen/oihDk */
 
 import {Styled_Magic} from './Styled_Magic'
 
