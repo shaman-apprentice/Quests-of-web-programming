@@ -2,11 +2,6 @@ import { css } from 'styled-components';
 import { StyledPage } from './StyledPage';
 import { turnDir, transState } from '../../constants';
 
-const id = 'yellow';
-const id2 = 'blue';
-
-//transition-delay: ${ props => props.theme.pageTurnDuration/2 }ms;
-
 const StyledLeftPage = StyledPage.extend`
     transform-origin: right;
     ${ props => turningForward(props) }
