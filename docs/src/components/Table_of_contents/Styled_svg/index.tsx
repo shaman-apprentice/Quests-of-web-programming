@@ -8,6 +8,7 @@ export interface Styled_svg_props {
 }
 
 export const Styled_svg = styled.div.attrs<Styled_svg_props>({})`
+  z-index: 1;
   width: 100%;
   
   svg #routes > g {
