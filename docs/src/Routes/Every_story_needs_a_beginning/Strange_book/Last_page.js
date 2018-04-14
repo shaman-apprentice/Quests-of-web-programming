@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom'
 
 import {Styled_page} from './Styled_page'
 import {Magic} from './Magic'
-import {Ghostly_blinking} from '../../../components/Ghostly_blinking'
+import {Ghostly_blinking} from 'components/Ghostly_blinking'
 
 class Last_page extends React.Component {
     state = {

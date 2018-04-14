@@ -24,6 +24,10 @@ module.exports = {
       ]
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx']
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        modules: [
+            'src',
+            'node_modules',
+        ]
     },
 };

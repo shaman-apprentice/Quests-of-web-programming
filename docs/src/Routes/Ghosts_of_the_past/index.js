@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import {Ghostly_blinking} from '../../components/Ghostly_blinking'
+import {Ghostly_blinking} from 'components/Ghostly_blinking'
 
 export const Ghosts_of_the_past = () => (
     <div>
