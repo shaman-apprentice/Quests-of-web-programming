@@ -4,12 +4,15 @@ import Hardback_book from '../Hardback_book'
 import Front_cover from './Front_cover'
 import {Front_cover_inner_site} from './Front_cover_inner_site'
 import {Styled_page} from './Styled_page'
-import dancingGhost from '!url-loader!./assets/dancingGhost.gif'
+import dancingGhost from './assets/dancingGhost.gif'
+import Last_page from './Last_page'
 
 export const Strange_book = () => (
     <Hardback_book>
         <Front_cover />
         <Front_cover_inner_site />
+
+        <Last_page />
 
         <Styled_page isLeft={false}>
             <p>Do not read on.</p>
@@ -33,7 +36,7 @@ export const Strange_book = () => (
         </Styled_page>
 
         <Styled_page isLeft={true}>
-            <p style={{fontStyle: 'italic', fontWeight: 'bold', color: 'purple'}}>WOLOLO</p>
+            <p style={{fontStyle: 'italic', fontWeight: 'bold', color: 'purple'}}>WOLOLOLOO</p>
 
             <h3 style={{marginTop: '2em', marginBottom: '0.5em'}}>EDV</h3>
             <p style={{marginTop: '0.5em'}}>

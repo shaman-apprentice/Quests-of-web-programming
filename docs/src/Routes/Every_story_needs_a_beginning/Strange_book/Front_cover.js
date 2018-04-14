@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import front_cover_bckgr_img from '!url-loader!./assets/FrontCover.jpg'
+import front_cover_bckgr_img from './assets/FrontCover.jpg'
 
 const StyledFrontCover = styled.div`
     height: 100%;
