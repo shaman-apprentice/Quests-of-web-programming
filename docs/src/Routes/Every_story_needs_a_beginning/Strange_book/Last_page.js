@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom'
 
 import {Styled_page} from './Styled_page'
 import {Magic} from './Magic'
-import {Blinking} from './Blinking'
+import {Ghostly_blinking} from '../../../components/Ghostly_blinking'
 
 class Last_page extends React.Component {
     state = {
@@ -15,7 +15,7 @@ class Last_page extends React.Component {
         if (!this.state.clicked) {
             this.setState(
                 { clicked: true },
-                () => setTimeout(() => this.props.history.push('/Ghosts_of_the_past'), 4000)
+                () => setTimeout(() => this.props.history.push('/Ghosts_of_the_past'), 3000)
             );
         }
     }
@@ -24,7 +24,7 @@ class Last_page extends React.Component {
         return (
             <Styled_page onClick={this.onClick}>
                 <Magic/>
-                {this.state.clicked && <Blinking/>}
+                {this.state.clicked && <Ghostly_blinking/>}
             </Styled_page>
         );
     }

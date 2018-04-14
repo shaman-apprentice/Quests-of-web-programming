@@ -1,7 +1,10 @@
 import * as React from 'react';
+import {Ghostly_blinking} from '../../components/Ghostly_blinking'
 
 export const Ghosts_of_the_past = () => (
     <React.Fragment>
+        <Ghostly_blinking animation_iteration_count={1} />
+
         <h2 style={{textAlign: 'center'}}>Ghosts of the past</h2>
         <p>
             The paper <a href="https://www.w3.org/History/1989/proposal.html">Information Management: A Proposal</a> by
@@ -22,7 +25,7 @@ export const Ghosts_of_the_past = () => (
             Some ridiculous fun fact in this repeating cycle: During the first browser war the vendors advertised heavily,
             that they support the latest HTML3 standards, but their was never an official HTML3.
         </p>
-        <p>The following quote summarise nicely, that the given standards are not perfect:</p>
+        <p>The following quote summarise nicely, that the given standards are not totally perfect:</p>
         <div style={{marginLeft: '2em'}}><em>
             <p>'A bug deployed in a software for a long term becomes a feature.</p>
 

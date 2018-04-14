@@ -42,8 +42,14 @@ export function Every_story_needs_a_beginning() {
                 </p>
             </Styled_handwriting>
 
+            <div style={{
+                // this div is needed for preventing outer margin auto to disturb css animation
+                // zIndex is needed for preventing books zIndex to "grow upwards" and overlap table of contents
+                position: 'relative',
+                zIndex: 0,
+            }}>
                 <Strange_book />
-
+            </div>
         </div>
     );
 }
