@@ -76,7 +76,7 @@ export const Styled_Magic = styled.div`
       width:10px;
       height:10px;
       margin:-5px 0 0 -5px;
-      background: green/*rgba(255,255,255,1)*/;
+      background: darkgreen;
       border-radius:50%;
       animation:drain 5s infinite ease-in;
     }
@@ -86,6 +86,7 @@ export const Styled_Magic = styled.div`
       animation-delay:1200ms;
       transform:scale(.7);
       animation-speed:7s;
+      background: darkgoldenrod;
     }
     
     .debris + .debris + .debris{
@@ -94,6 +95,7 @@ export const Styled_Magic = styled.div`
       animation-delay:500ms;
       transform:scale(.8);
       animation-speed:4s;
+      background: darkgreen;
     }
     
     .debris + .debris + .debris + .debris{
@@ -102,33 +104,37 @@ export const Styled_Magic = styled.div`
       animation-delay:700ms;
       transform:scale(.4);
       animation-speed:2s;
+      background: darkslategrey;
     }
     
-    .debris + .debris + .debris + .debris + .debris{  
+    .debris + .debris + .debris + .debris + .debris {  
       top:150%;
       left:330%;
       animation-delay:200ms;
       transform:scale(.5);
+      background: darkcyan;
     }
-    .debris + .debris + .debris + .debris + .debris + .debris{
+    .debris + .debris + .debris + .debris + .debris + .debris {
       animation-delay:2000ms;
       transform:scale(.7);
       animation-speed:6s;
+      background: darkred;
     }
     
-    .debris + .debris + .debris + .debris + .debris + .debris + .debris{
+    .debris + .debris + .debris + .debris + .debris + .debris + .debris {
       top:300%;
       left:200%;
-        animation-delay:3000ms;
+      animation-delay:3000ms;
       transform:scale(.3);
+      background: darkmagenta;
     }
     
-    .debris + .debris + .debris + .debris + .debris + .debris + .debris + .debris{
+    .debris + .debris + .debris + .debris + .debris + .debris + .debris + .debris {
       top:320%;
       left:180%;
       animation-delay:400ms;
       transform:scale(1.2);
-      
+      background: darkolivegreen;
     }
     
     @keyframes drain{
