@@ -12,8 +12,6 @@ export const Strange_book = () => (
         <Front_cover />
         <Front_cover_inner_site />
 
-        <Last_page />
-
         <Styled_page isLeft={false}>
             <p>Do not read on.</p>
             <p>This book is a <span style={{fontSize: '1.3em'}}>secret</span> book,</p>
@@ -47,5 +45,6 @@ export const Strange_book = () => (
 
             <img src={dancingGhost} alt="dancing ghost"/>
         </Styled_page>
+        <Last_page />
     </Hardback_book>
 )

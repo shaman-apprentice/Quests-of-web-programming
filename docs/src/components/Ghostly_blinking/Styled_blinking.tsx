@@ -13,7 +13,8 @@ const Blinking_keyframe = keyframes`
 `
 
 export interface Styled_blinking_props {
-    animation_iteration_count?: number,
+    animation_iteration_count: number,
+    animation_time: number,
 }
 
 export const Styled_blinking = styled.div.attrs<Styled_blinking_props>({})`
@@ -24,9 +25,6 @@ export const Styled_blinking = styled.div.attrs<Styled_blinking_props>({})`
   right: 0;
   opacity: 0;
   background: black;
-  animation: ${Blinking_keyframe} 1.5s;
-  animation-iteration-count: ${props => props.animation_iteration_count ?
-    props.animation_iteration_count :
-    10
-  };
+  animation: ${Blinking_keyframe} ${props => props.animation_time}s;
+  animation-iteration-count: ${props => props.animation_iteration_count};
 `

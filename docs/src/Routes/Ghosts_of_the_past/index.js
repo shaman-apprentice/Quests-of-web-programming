@@ -1,8 +1,9 @@
-import * as React from 'react';
+import * as React from 'react'
+
 import {Ghostly_blinking} from '../../components/Ghostly_blinking'
 
 export const Ghosts_of_the_past = () => (
-    <React.Fragment>
+    <div>
         <Ghostly_blinking animation_iteration_count={1} />
 
         <h2 style={{textAlign: 'center'}}>Ghosts of the past</h2>
@@ -70,5 +71,5 @@ export const Ghosts_of_the_past = () => (
                 </code>
             </pre>
         </div>
-    </React.Fragment>
+    </div>
 )
