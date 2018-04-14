@@ -4,7 +4,7 @@ import Hardback_book from '../Hardback_book'
 import Front_cover from './Front_cover'
 import {Front_cover_inner_site} from './Front_cover_inner_site'
 import {Styled_page} from './Styled_page'
-import dancingGhost from './assets/dancingGhost.gif'
+import dancingGhost from 'components/shared_assets/dancingGhost.gif'
 import Last_page from './Last_page'
 
 export const Strange_book = () => (

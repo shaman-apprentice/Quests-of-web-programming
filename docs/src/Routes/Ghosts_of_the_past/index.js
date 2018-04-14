@@ -2,9 +2,12 @@ import * as React from 'react'
 
 import {Ghostly_blinking} from 'components/Ghostly_blinking'
 
+import {Mouse_following_ghost} from './Mouse_following_ghost'
+
 export const Ghosts_of_the_past = () => (
-    <div>
+    <React.Fragment>
         <Ghostly_blinking animation_iteration_count={1} />
+        <Mouse_following_ghost />
 
         <h2 style={{textAlign: 'center'}}>Ghosts of the past</h2>
         <p>
@@ -71,5 +74,5 @@ export const Ghosts_of_the_past = () => (
                 </code>
             </pre>
         </div>
-    </div>
+    </React.Fragment>
 )
