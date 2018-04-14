@@ -55,6 +55,7 @@ export const Ghosts_of_the_past = () => (
                 <code>
                     {`
     [null] == ![''] // true
+
     [undefined] == 0 // true
 
     var sum = 0;
