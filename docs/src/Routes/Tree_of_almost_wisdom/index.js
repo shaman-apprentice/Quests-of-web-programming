@@ -1,10 +1,12 @@
 import * as React from 'react'
+import {TransitionGroup} from 'react-transition-group'
 
 import {Styled_layout} from './Styled_Layout'
 import {Tree_svg} from './Tree_svg'
 import {Out_of_wisdom} from './Out_of_wisdom'
-import {Styled_peace_of_wisdom_container} from './Styled_peace_of_wisdom_container'
+import {Styled_peace_of_wisdom_TransGroup} from './Styled_peace_of_wisdom_TransGroup'
 import * as peaces_of_wisdom from './peaces_of_wisdom'
+import {Fade_in_out, Styled_Fade_in_out_TransGroup} from './peaces_of_wisdom/Fade_in_out'
 
 let new_peaces_of_wisdom = Object.keys(peaces_of_wisdom);
 
@@ -12,6 +14,7 @@ export class Tree_of_almost_wisdom extends React.Component {
     state = {
         wisdom_key: null,
     }
+    out_of_wisdom_counter = 0;
 
     get_next_wisdom_key = () => {
         if (new_peaces_of_wisdom.length === 0) {
@@ -28,15 +31,24 @@ export class Tree_of_almost_wisdom extends React.Component {
 
     render_peace_of_wisdom = () => {
         if (this.state.wisdom_key === null) {
-            return null;
+            return [];
         }
 
         if(this.state.wisdom_key === undefined) {
-            return <Out_of_wisdom />
+            this.out_of_wisdom_counter += 1;
+            return [
+                <Fade_in_out key={'out_of_wisdom_'+this.out_of_wisdom_counter}>
+                    <Out_of_wisdom />
+                </Fade_in_out>
+            ]
         }
 
         const Peace_of_wisdom = peaces_of_wisdom[this.state.wisdom_key];
-        return <Peace_of_wisdom />
+        return [
+            <Fade_in_out key={this.state.wisdom_key}>
+                <Peace_of_wisdom />
+            </Fade_in_out>
+        ]
     }
 
 
@@ -44,9 +56,9 @@ export class Tree_of_almost_wisdom extends React.Component {
         return (
             <Styled_layout>
                 <Tree_svg onClick={this.on_tree_clicked} />
-                <Styled_peace_of_wisdom_container>
+                <Styled_Fade_in_out_TransGroup>
                     {this.render_peace_of_wisdom()}
-                </Styled_peace_of_wisdom_container>
+                </Styled_Fade_in_out_TransGroup>
             </Styled_layout>
         )
     }
