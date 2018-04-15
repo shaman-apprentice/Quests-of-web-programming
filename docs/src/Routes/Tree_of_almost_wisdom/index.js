@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {TransitionGroup} from 'react-transition-group'
+import _ from 'lodash';
 
 import {Styled_layout} from './Styled_Layout'
 import {Tree_svg} from './Tree_svg'
@@ -29,6 +30,12 @@ export class Tree_of_almost_wisdom extends React.Component {
     on_tree_clicked = () =>
         this.setState({wisdom_key: this.get_next_wisdom_key()})
 
+    debounced_on_tree_clicked =
+        _.debounce(this.on_tree_clicked, 2000, {
+            'leading': true,
+            'trailing': false
+        })
+
     render_peace_of_wisdom = () => {
         if (this.state.wisdom_key === null) {
             return [];
@@ -55,7 +62,7 @@ export class Tree_of_almost_wisdom extends React.Component {
     render() {
         return (
             <Styled_layout>
-                <Tree_svg onClick={this.on_tree_clicked} />
+                <Tree_svg onClick={this.debounced_on_tree_clicked} />
                 <Styled_Fade_in_out_TransGroup>
                     {this.render_peace_of_wisdom()}
                 </Styled_Fade_in_out_TransGroup>

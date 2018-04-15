@@ -3,7 +3,6 @@ import {Transition} from 'react-transition-group'
 import styled from 'styled-components'
 
 const calc_opacity = (transState) => {
-    console.log(transState)
     if (transState === 'entering') {
         return 0;
     }
@@ -24,7 +23,7 @@ const Stylings = styled.div`
   opacity: ${props => calc_opacity(props.transitionState)};
 `
 
-export const Fade_in_out = (props) => console.log(props) ||
+export const Fade_in_out = (props) =>
     <Transition
         in={props.in}
         timeout={2000}
