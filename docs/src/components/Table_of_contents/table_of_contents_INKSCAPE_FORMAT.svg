@@ -24,7 +24,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.31380208"
-     inkscape:cx="1070.063"
+     inkscape:cx="-66.003401"
      inkscape:cy="191.08252"
      inkscape:document-units="px"
      inkscape:current-layer="routes"
@@ -677,10 +677,10 @@
          id="title5472">Ghosts of the past</title>
     </g>
     <g
-       id="Tree_of_(almost)_wisdom"
-       transform="matrix(0.68794341,0,0,0.6745064,425.37688,76.441159)">
+       id="Tree_of_almost_wisdom">
       <g
-         id="g1282">
+         id="g1282"
+         transform="matrix(0.68794341,0,0,0.6745064,425.37688,76.441159)">
         <rect
            style="opacity:1;fill:#784421;fill-opacity:1"
            id="rect1035"

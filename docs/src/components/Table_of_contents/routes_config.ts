@@ -23,6 +23,9 @@ export const routes_config: RouteI[] = [
         name: 'Ghosts_of_the_past',
     },
     {
+        name: 'Tree_of_almost_wisdom',
+    },
+    {
         name: 'Not_found',
         exact: false,
         path: '/',
