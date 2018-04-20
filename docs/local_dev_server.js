@@ -28,7 +28,7 @@ const dev_server = http.createServer(function (req, res) {
             res.statusCode = 500;
             res.end('internal server error');
         } else {
-            res.setHeader('Content-type', requested_resource.type);
+            res.setHeader('Content-type', `${requested_resource.type}; charset=utf-8`);
             res.end(data);
         }
     });

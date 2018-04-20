@@ -13,13 +13,13 @@ let new_peaces_of_wisdom = Object.keys(peaces_of_wisdom);
 
 export class Tree_of_almost_wisdom extends React.Component {
     state = {
-        wisdom_key: null,
+        wisdom_key: 'NO_WISDOM_SO_FAR',
     }
     out_of_wisdom_counter = 0;
 
     get_next_wisdom_key = () => {
         if (new_peaces_of_wisdom.length === 0) {
-            return undefined;
+            return 'NO_MORE_WISDOM';
         }
 
         const random_index = Math.floor(Math.random() * new_peaces_of_wisdom.length);
@@ -37,11 +37,15 @@ export class Tree_of_almost_wisdom extends React.Component {
         })
 
     render_peace_of_wisdom = () => {
-        if (this.state.wisdom_key === null) {
-            return [];
+        if (this.state.wisdom_key === 'NO_WISDOM_SO_FAR') {
+            return [
+                <Fade_in_out key={'out_of_wisdom_'+this.out_of_wisdom_counter}>
+                    <div><p>&#128034;</p><p>&#x1f422;</p>U+1F422 </div>
+                </Fade_in_out>
+            ];
         }
 
-        if(this.state.wisdom_key === undefined) {
+        if(this.state.wisdom_key === 'NO_MORE_WISDOM') {
             this.out_of_wisdom_counter += 1;
             return [
                 <Fade_in_out key={'out_of_wisdom_'+this.out_of_wisdom_counter}>
