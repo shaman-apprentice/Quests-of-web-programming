@@ -18,7 +18,8 @@ const calc_opacity = (transState) => {
 }
 
 const Stylings = styled.div`
-  position: absolute; /*for keeping position when one has entering and one exiting*/
+  grid-column: 1 / 1;
+  grid-row: 1/ 1;
   transition: opacity 2s ease-in-out;
   opacity: ${props => calc_opacity(props.transitionState)};
 `
