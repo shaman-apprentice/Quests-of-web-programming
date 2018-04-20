@@ -12,7 +12,7 @@ export const Ghosts_of_the_past = () => (
         <h2 style={{textAlign: 'center'}}>Ghosts of the past</h2>
         <p>
             The paper <a href="https://www.w3.org/History/1989/proposal.html">Information Management: A Proposal</a> by
-            Tim Berners-Lee in 1989 is commonly stated as the birth of the world wide web (www). In its origin
+            Tim Berners-Lee in 1989 is commonly stated as the birth of the world wide web. In its origin
             it was 'only' meant to be a static content management system to keep information and make them retrievable
             at CERN (the European Organization for Nuclear Research).
         </p>
@@ -57,13 +57,16 @@ export const Ghosts_of_the_past = () => (
             are planed roughly every year driven by W3C and WHATWG since 2014. Same goes for ECMAScript.
         </p>
         <div>
-            <p style={{marginBottom: '-1em'}}>For a nice spooky ending below my personal 3 favorite javascript 'highlights':</p>
+            <p style={{marginBottom: '-1em'}}>For a nice spooky ending below some javascript 'highlights':</p>
             <pre>
                 <code>
                     {`
     [null] == ![''] // true
 
     [undefined] == 0 // true
+
+    parseInt(1.9) === parseInt(0.000001) // false
+    parseInt(1.9) === parseInt(0.0000001) // true
 
     var sum = 0;
     for (var i in [1,2,3]) {

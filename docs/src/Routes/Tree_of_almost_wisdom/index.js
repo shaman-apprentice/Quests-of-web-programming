@@ -31,7 +31,7 @@ export class Tree_of_almost_wisdom extends React.Component {
         this.setState({wisdom_key: this.get_next_wisdom_key()})
 
     debounced_on_tree_clicked =
-        _.debounce(this.on_tree_clicked, 2000, {
+        _.debounce(this.on_tree_clicked, 1000, {
             'leading': true,
             'trailing': false
         })
@@ -39,8 +39,8 @@ export class Tree_of_almost_wisdom extends React.Component {
     render_peace_of_wisdom = () => {
         if (this.state.wisdom_key === 'NO_WISDOM_SO_FAR') {
             return [
-                <Fade_in_out key={'out_of_wisdom_'+this.out_of_wisdom_counter}>
-                    <div><p>&#128034;</p><p>&#x1f422;</p>U+1F422 </div>
+                <Fade_in_out key={'NO_WISDOM_SO_FAR'}>
+                    <div><em>Ey, pst, try clicking the tree...</em></div>
                 </Fade_in_out>
             ];
         }

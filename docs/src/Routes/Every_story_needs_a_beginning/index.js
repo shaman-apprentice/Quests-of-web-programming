@@ -13,7 +13,7 @@ export function Every_story_needs_a_beginning() {
                     Once upon a time, in a parallel universe very different than this one, there was a young man. He wasn’t born in the right universe
                     for having the chance of becoming a Jedi. In this universe it is impossible to discover Narnia through a wardrobe, when you are eight.
                     To be precise it is impossible at any age in this universe. No one will ever get their Hogwarts letter, when he is eleven.
-                    Neither when he is twelve in case of repeater or at any other age. And waiting for Gandalf until your fifty birthday, to take you out
+                    Neither when he is twelve in case of repeaters or at any other age. And waiting for Gandalf until your fifty birthday, to take you out
                     to an adventure, is also not very promising in this universe.
                 </p>
                 <p>
@@ -25,7 +25,7 @@ export function Every_story_needs_a_beginning() {
                 </p>
                 <p>
                     Looking out for new things, being afraid of nothing, believing in the unbelievable, our main character knows, deep inside of his heart,
-                    that these legend are more than fairy tales. Maybe that they already exits somewhere in this strange universe.
+                    that these legend are more than fairy tales. Maybe that they already exit somewhere in this strange universe.
                 </p>
                 <p>
                     He is ready to bear witness of miracles. No he is not only ready, he wants to become a part of them. He knows, that if he only tries hard enough,
