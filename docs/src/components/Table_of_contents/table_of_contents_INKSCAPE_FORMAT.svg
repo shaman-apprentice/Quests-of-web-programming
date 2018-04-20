@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1920"
@@ -24,8 +25,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.31380208"
-     inkscape:cx="-66.003401"
-     inkscape:cy="191.08252"
+     inkscape:cx="340.18442"
+     inkscape:cy="46.348999"
      inkscape:document-units="px"
      inkscape:current-layer="routes"
      showgrid="false"
@@ -383,7 +384,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -401,8 +402,8 @@
      id="layer3"
      inkscape:label="ways">
     <path
-       style="fill:none;stroke:#000000;stroke-width:3.71924806;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:7.43849589, 3.71924795;stroke-dashoffset:5.0036149;stroke-opacity:1"
-       d="M 87.165398,88.006544 131.21136,65.289313"
+       style="fill:none;stroke:#000000;stroke-width:6.18886423;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:12.37772783, 6.18886392;stroke-dashoffset:5.0036149;stroke-opacity:1"
+       d="M 106.09892,88.78629 203.33842,60.2938"
        id="path5486"
        inkscape:connector-curvature="0" />
   </g>
@@ -412,7 +413,7 @@
      inkscape:label="routes">
     <g
        id="Every_story_needs_a_beginning"
-       transform="translate(5.3453904,5.8799295)">
+       transform="translate(25.581075,6.723083)">
       <g
          transform="matrix(0.56836092,0,0,0.59091303,247.6446,-22.684564)"
          id="Every_story_needs_a_beginning2">
@@ -543,7 +544,8 @@
          id="title5262">Every story needs a beginning</title>
     </g>
     <g
-       id="Ghosts_of_the_past">
+       id="Ghosts_of_the_past"
+       transform="translate(77.570125,-1.6863076)">
       <g
          transform="matrix(0.26297717,0,0,0.32966944,205.70578,75.19638)"
          id="Ghosts_of_the_past_inner">
@@ -677,7 +679,8 @@
          id="title5472">Ghosts of the past</title>
     </g>
     <g
-       id="Tree_of_almost_wisdom">
+       id="Tree_of_almost_wisdom"
+       transform="matrix(1.4825616,0,0,1.257923,-207.7525,8.0283023)">
       <g
          id="g1282"
          transform="matrix(0.68794341,0,0,0.6745064,425.37688,76.441159)">
@@ -797,5 +800,16 @@
            transform="matrix(0.96293105,0.26974764,-0.26988099,0.96289369,0,0)" />
       </g>
     </g>
+    <image
+       sodipodi:absref="C:\Users\ich-PC\Desktop\Magic\Quests-of-web-programming\docs\src\components\Table_of_contents\sorcerers_apprentice.gif"
+       xlink:href="sorcerers_apprentice.gif"
+       width="69.207748"
+       height="66.010033"
+       preserveAspectRatio="none"
+       id="sorcerers_apprentice"
+       x="362.94302"
+       y="62.023945" />
+    <g
+       id="Wizarding" />
   </g>
 </svg>
