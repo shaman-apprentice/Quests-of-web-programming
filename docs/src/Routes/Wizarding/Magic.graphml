@@ -801,9 +801,9 @@ image<y:LabelModel>
           <y:Geometry height="131.60000000000002" width="325.19999999999993" x="-217.37943394978834" y="159.151350402832"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" raised="false" type="dashed" width="3.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="120.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="308.0" x="8.599999999999966" y="5.800000000000011">&lt;html&gt;
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="120.0" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="307.0" x="9.099999999999966" y="5.800000000000011">&lt;html&gt;
 &lt;ul&gt;
-&lt;li&gt;Transpiles fancy js to js browser compatible js&lt;/li&gt;
+&lt;li&gt;Transpiles fancy js to browser compatible js&lt;/li&gt;
 &lt;li&gt;Encodes ressources to be loaded by js&lt;/li&gt;
 &lt;li&gt;Combines multiple files for less web requests&lt;/li&gt;
 &lt;li&gt;Puts static ressources to the right place, &lt;br/&gt;
