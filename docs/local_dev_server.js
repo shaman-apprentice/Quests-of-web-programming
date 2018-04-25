@@ -48,8 +48,14 @@ const resolve_requested_resource_path = (url) => {
     }
 }
 
-const get_ressource_type = (ending) => {
-    switch (ending) {
+const get_ressource_type = (path) => {
+    const splittedPath = path.split('.');
+    if (splittedPath.length < 2) {
+        console.error(`requested resource '${path}' has no file ending`);
+        return 'text/html';
+    }
+
+    switch (splittedPath[splittedPath.length - 1]) {
         case 'js':
             return 'text/javascript';
         case 'gif':
