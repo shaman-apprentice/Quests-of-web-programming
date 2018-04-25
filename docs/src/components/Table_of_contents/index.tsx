@@ -25,6 +25,9 @@ class Table_of_contents extends React.Component<Props> {
                 console.warn(route);
             }
         }
+
+        // removing inkscape absolute path to server adjusted path
+        document.getElementById('Wizarding').setAttribute('xlink:href', 'dist/sorcerers_apprentice.gif');
     }
 
     render() {
