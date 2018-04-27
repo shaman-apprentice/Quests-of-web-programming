@@ -12,7 +12,7 @@ export class Mouse_following_ghost extends React.Component {
     }
 
     onmousemove = (e) =>
-        this.setState({x: e.pageX, y: e.pageY})
+        this._isMounted && this.setState({x: e.pageX, y: e.pageY})
 
     debounced_onmousemove = _.debounce(this.onmousemove, 60)
 
@@ -20,10 +20,12 @@ export class Mouse_following_ghost extends React.Component {
         // when ghost should also follow on scroll, add listener 'scroll'
         // and use e.clientY for tracking mouse move and add window.scrollY
         this.listener = document.addEventListener('mousemove', this.debounced_onmousemove);
+        this._isMounted = true;
     }
 
     componentWillUnmount() {
         document.removeEventListener('mousemove', this.listener)
+        this._isMounted = false;
     }
 
     render() {
