@@ -19,7 +19,7 @@ export const Styled_svg = styled.div.attrs<Styled_svg_props>({})`
   
   svg #routes > *:hover {
     opacity: 0.75;
-    transform: scale(1.1);
+    transform: scale(1.03);
   }
   
   ${ props => css_opening_mechanism(props) }
