@@ -20,25 +20,22 @@ export function Every_story_needs_a_beginning() {
                     Nevertheless, their were rumours about unexplainable things, which could be taken as magic. Their were legends about people,
                     who could write clean source code. Source code written by intelligent people, forged through tests. In fact every piece of code had the destiny
                     of fulfilling an unit test. Those pieces which weren’t necessary to fulfil a test, were merciless removed. Those pieces which weren’t clear
-                    and readable pitiless refactored. Under these circumstances, legends says, there were heroes who touched running systems -
+                    and readable pitiless refactored. Under these circumstances, legends say, there were heroes who touched running systems -
                     updated them without fear of breaking something; even without the need for a restart afterwards...
                 </p>
                 <p>
                     Looking out for new things, being afraid of nothing, believing in the unbelievable, our main character knows, deep inside of his heart,
-                    that these legend are more than fairy tales. Maybe that they already exit somewhere in this strange universe.
+                    that these legends are more than fairy tales. Maybe that they already exit somewhere in this strange universe.
                 </p>
                 <p>
                     He is ready to bear witness of miracles. No he is not only ready, he wants to become a part of them. He knows, that if he only tries hard enough,
                     gives everything, never gives up, he can proof, that this kind of magic does exist. He catches slowly a deep breath
-                     and says to himself: <span style={{ fontStyle:'italic'}}>Just focus, take your time and do the next step right.</span>
+                    and says to himself: <span style={{ fontStyle:'italic'}}>Just focus, take your time and do the next step right.</span>
                 </p>
                 <p>
                     So he summons all of his courage, knowing that today is the day, where he will start an adventure telling worth. What should ever go wrong,
                     if he would never waver! So he steps out of the front door and <span style={{ fontStyle:'italic'}}>*uiiiiii*</span> stumbles
-                    over his own feet, finding himself horizontal on the ground ...
-                </p>
-                <p>
-                    *A fast look to the left* *A fast look to the right* Puh, nobody has seen that. OH, what is this?
+                    over his own feet, finding himself horizontal on the ground ... <em>OH, what is this?</em>
                 </p>
             </Styled_handwriting>
 
