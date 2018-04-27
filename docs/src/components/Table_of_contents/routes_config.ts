@@ -29,6 +29,9 @@ export const routes_config: RouteI[] = [
         name: 'Wizarding',
     },
     {
+        name: 'The_luggage',
+    },
+    {
         name: 'Not_found',
         exact: false,
         path: '/',
