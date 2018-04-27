@@ -80,7 +80,7 @@ class Book extends React.Component {
     render() {
         let pages = React.Children.toArray(this.props.children);
         if (pages.length % 2 === 1) {
-            console.warn('a book should have an equal number of pages ( an empty div is added as last page / back cover');
+            console.warn('a book should have an equal number of pages ( an empty div is added as last page / back cover )');
             pages.push(<div></div>); // add empty page as filler before cover
         }
 

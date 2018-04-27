@@ -46,5 +46,6 @@ export const Strange_book = () => (
             <img src={dancingGhost} alt="dancing ghost"/>
         </Styled_page>
         <Last_page />
+        <div>{/*so that book has even number of pages */}</div>
     </Hardback_book>
 )
