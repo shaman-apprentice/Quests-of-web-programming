@@ -65,7 +65,7 @@ export const Ghosts_of_the_past = () => (
 
     [undefined] == 0 // true
 
-    parseInt(1.9) === parseInt(0.000001) // false
+    parseInt(1.9) === parseInt(0.0000010) // false
     parseInt(1.9) === parseInt(0.0000001) // true
 
     var sum = 0;
