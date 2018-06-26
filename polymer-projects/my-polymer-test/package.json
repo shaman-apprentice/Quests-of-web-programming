@@ -1,0 +1,12 @@
+{
+  "name": "my-polymer-test",
+  "version": "0.0.1",
+  "description": "first baby steps",
+  "main": "index.html",
+  "author": "shaman-apprentice",
+  "license": "MIT",
+  "devDependencies": {
+    "@polymer/polymer": "3.0.0",
+    "webpack": "^4.12.1",
+  }
+}
