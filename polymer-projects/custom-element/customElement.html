@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        [female] {
+            color: red;
+        }
+    </style>
+
+    <script>
+      class BlaBla extends HTMLElement {
+          constructor() {
+            super();
+            console.log("bla bla");
+          }
+
+        // A getter/setter for an open property.
+        get female() {
+          return this.hasAttribute('female');
+        }
+
+        set female(val) {
+            console.log("its nothing...");
+          // Reflect the value of the open property as an HTML attribute.
+          if (val) {
+            this.setAttribute('female', val);
+          } else {
+            this.removeAttribute('female');
+          }
+        }
+
+        connectedCallback() {
+          this.innerHTML = "<b>bla bla</b>";
+          this.female = "it's nothing";
+        }
+      }
+
+      window.customElements.define('bla-bla', BlaBla);
+    </script>
+</head>
+<body>
+    <bla-bla></bla-bla>
+</body>
+</html>
