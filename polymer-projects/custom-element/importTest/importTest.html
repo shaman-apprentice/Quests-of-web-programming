@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function onLoad(e) {
+          console.log("loaded")
+        }
+
+        function onLoadError(e) {
+          console.log("error")
+        }
+    </script>
+
+</head>
+<body>
+    <div>hi</div>
+</body>
+
+<script>
+  console.log("some script placed before link / import")
+</script>
+<link rel="import" href="./toBeImported.html" onload="onLoad(event)" onerror="onLoadError(event)"/>
+<script>
+  console.log("some script placed after link / import")
+</script>
+
+<script>
+  const importedDocument = document.querySelector("link[rel=import]").import
+  const warning = importedDocument.querySelector(".warning")
+  document.body.appendChild(warning.cloneNode(true));
+</script>
+
+
+</html>
