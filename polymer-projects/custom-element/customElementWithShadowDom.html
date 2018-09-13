@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        [female] {
+            color: red;
+        }
+    </style>
+
+    <script>
+      const template = document.createElement("template");
+      template.innerHTML = `
+        <div>
+          hi from the dark
+          <slot></slot>
+        </div>
+      `;
+
+      class BlaBla extends HTMLElement {
+          constructor() {
+            super();
+            const shadowRoot = this.attachShadow({mode: 'open'});
+            shadowRoot.appendChild(template.content.cloneNode(true));
+          }
+      }
+
+      window.customElements.define('bla-bla', BlaBla);
+    </script>
+</head>
+<body>
+    <bla-bla>haha</bla-bla>
+</body>
+</html>
