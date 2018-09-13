@@ -16,12 +16,14 @@
 </head>
 <body>
     <div>hi</div>
+    <say-hi>Otto</say-hi>
 </body>
 
 <script>
   console.log("some script placed before link / import")
 </script>
 <link rel="import" href="./toBeImported.html" onload="onLoad(event)" onerror="onLoadError(event)"/>
+<link rel="import" href="./say-hi.html" onload="onLoad(event)" onerror="onLoadError(event)"/>
 <script>
   console.log("some script placed after link / import")
 </script>

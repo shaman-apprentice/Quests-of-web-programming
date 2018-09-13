@@ -1,0 +1,17 @@
+<script>
+  const HI_TMPLATE = document.createElement("template")
+  HI_TMPLATE.innerHTML = `<div>hi <slot>dude</slot></div>`
+
+  window.customElements.define("say-hi", class extends HTMLElement {
+    constructor() {
+      super()
+
+      const shadowRoot = this.attachShadow({ mode: "open" })
+      shadowRoot.appendChild(HI_TMPLATE.content.cloneNode(true))
+    }
+
+/*    connectedCallback() {
+      this.innerHTML = `hi ${this.getAttribute("name") || "dude" }`
+    }*/
+  })
+</script>
