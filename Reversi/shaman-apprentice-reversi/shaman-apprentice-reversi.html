@@ -6,21 +6,21 @@
       const template = document.createElement("template")
       template.content.appendChild(shamanApprenticeReversiNs.tmp.buildBoardCss())
 
-      for (let y = 1; y <= 8; y++) {
-        const row = document.createElement("div")
-        row.setAttribute("class", "row")
-        for (let x = 1; x <= 8; x++) {
-          const field = document.createElement("div")
-          field.setAttribute("class", "field")
-          field.setAttribute("data-y", y)
-          field.setAttribute("data-x", x)
-          field.innerHTML = `${y}-${x}`
-          row.appendChild(field)
-        }
+      const board = document.createElement("div");
+      board.setAttribute("class", "board")
 
-        template.content.appendChild(row)
+      for (let y = 1; y <= 8; y++) {
+        for (let x = 1; x <= 8; x++) {
+          board.innerHTML += `
+            <div class="field">
+              <div class="stone" data-y="${y}" data-x="${x}">${y}-${x}</div>
+              <div class="square-hack"></div>
+            </div>
+          `
+        }
       }
 
+      template.content.appendChild(board)
       return template
     }
 
