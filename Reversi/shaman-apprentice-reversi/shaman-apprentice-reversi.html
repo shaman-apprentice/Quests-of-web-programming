@@ -1,0 +1,38 @@
+<link rel="import" href="data-model.html" />
+
+<script>
+  (function() {
+    function buildTemplate() {
+      const template = document.createElement("template")
+      template.content.appendChild(shamanApprenticeReversiNs.tmp.buildBoardCss())
+
+      for (let y = 1; y <= 8; y++) {
+        const row = document.createElement("div")
+        row.setAttribute("class", "row")
+        for (let x = 1; x <= 8; x++) {
+          const field = document.createElement("div")
+          field.setAttribute("class", "field")
+          field.setAttribute("data-y", y)
+          field.setAttribute("data-x", x)
+          field.innerHTML = `${y}-${x}`
+          row.appendChild(field)
+        }
+
+        template.content.appendChild(row)
+      }
+
+      return template
+    }
+
+    const template = buildTemplate()
+
+    window.customElements.define("shaman-apprentice-reversi", class extends HTMLElement {
+      constructor() {
+        super()
+        console.log(template)
+        const shadowRoot = this.attachShadow({mode: "open"})
+        shadowRoot.appendChild(template.content.cloneNode(true))
+      }
+    })
+  })()
+</script>
