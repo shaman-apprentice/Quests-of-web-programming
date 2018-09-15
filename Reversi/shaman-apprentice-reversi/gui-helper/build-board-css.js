@@ -5,6 +5,7 @@ shamanApprenticeReversiNs.tmp.buildBoardCss = function() {
     .board {
       min-width: 100px;
       max-width: 500px;
+      border: 3px solid black;
       display: grid;
       background-color: black;
       grid-template-columns: repeat(8, 1fr);
@@ -23,20 +24,17 @@ shamanApprenticeReversiNs.tmp.buildBoardCss = function() {
     
     .stone {
       position: absolute;
-      display: hidden;
       height: 95%;
       width: 95%;
       margin: 5%;
       border-radius: 50%;
     }
     
-    .black {
-      display: block;
+    .field.black .stone {
       background-color: black;
     }
     
-    .white {
-      display: block;
+    .field.white .stone {
       background-color: white;
     }
   `

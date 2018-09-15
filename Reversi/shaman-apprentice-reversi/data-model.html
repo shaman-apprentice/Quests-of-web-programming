@@ -1,12 +1,39 @@
 <script>
-  const shamanApprenticeReversiNs = {
-    tmp: {
-      buildBoardCss: "defined by build-board-css.js",
-    },
-  }
+  (function() {
+    const board = [
+      [0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, -1, 1, 0, 0, 0],
+      [0, 0, 0, 1, -1, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0, 0],
+    ]
+
+    const allowedMoves = board.reduce( (acc, row, y) => {
+        acc += row.reduce( (innerAcc, col, x) => {
+          innerAcc += `${y}-${x}`
+          return innerAcc
+        }, "")
+        return acc;
+      }, "")
+
+    window.shamanApprenticeReversiNs = {
+      board,
+      score: 0,
+      turn: "black", // black := 1, white -1
+      allowedMoves,
+      handleFieldClick: "defined by game-engine/handle-flield-click",
+      tmp: {
+        buildBoardCss: "defined by gui-helper/build-board-css.js",
+      },
+    };
+  })()
 </script>
 
 <script src="gui-helper/build-board-css.js"></script>
+<link rel="import" href="game-engine/handle-field-click.html" />
 
 <!-- todo clean up
   del shamanApprenticeReversiNs[tmp]

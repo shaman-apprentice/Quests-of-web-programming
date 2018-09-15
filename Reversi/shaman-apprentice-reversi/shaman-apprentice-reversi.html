@@ -9,11 +9,26 @@
       const board = document.createElement("div");
       board.setAttribute("class", "board")
 
-      for (let y = 1; y <= 8; y++) {
-        for (let x = 1; x <= 8; x++) {
+      function handleStartFormation(y, x) {
+        if (shamanApprenticeReversiNs.board[y][x] === 1) {
+          return "black"
+        }
+        if (shamanApprenticeReversiNs.board[y][x] === -1) {
+          return "white"
+        }
+        return ""
+      }
+
+      for (let y = 0; y <= 7; y++) {
+        for (let x = 0; x <= 7; x++) {
           board.innerHTML += `
-            <div class="field">
-              <div class="stone" data-y="${y}" data-x="${x}">${y}-${x}</div>
+            <div
+              class="field ${handleStartFormation(y, x)}"
+              data-y="${y}"
+              data-x="${x}"
+              onclick="shamanApprenticeReversiNs.handleFieldClick(event, ${y}, ${x})"
+            >
+              <div class="stone"></div>
               <div class="square-hack"></div>
             </div>
           `
@@ -29,7 +44,6 @@
     window.customElements.define("shaman-apprentice-reversi", class extends HTMLElement {
       constructor() {
         super()
-        console.log(template)
         const shadowRoot = this.attachShadow({mode: "open"})
         shadowRoot.appendChild(template.content.cloneNode(true))
       }
