@@ -5,8 +5,14 @@ import model from "./model"
 const template = document.createElement("template")
 template.content.appendChild(boardCssStyleNode)
 template.content.appendChild(boardContentNode)
-boardContentNode.addEventListener("click", () => console.log("hi board clicked"))
-console.log(boardContentNode)
+
+function handleFieldClick(event) {
+  model.eventEmitter.emit(model.eventTypes.move, {
+    fieldNode: event.currentTarget,
+    y: event.currentTarget.dataset.y,
+    x: event.currentTarget.dataset.x,
+  })
+}
 
 window.customElements.define("shaman-apprentice-reversi", class extends HTMLElement {
   constructor() {
@@ -17,14 +23,13 @@ window.customElements.define("shaman-apprentice-reversi", class extends HTMLElem
 
   connectedCallback() {
     this.shadowRoot.querySelectorAll(".field").forEach( fieldNode => {
-      fieldNode.addEventListener("click", this.handleFieldClick)
+      fieldNode.addEventListener("click", handleFieldClick)
     })
   }
 
-  handleFieldClick(event) {
-    console.log(event.currentTarget.dataset.y, "-", event.currentTarget.dataset.x)
-    const field = event.currentTarget
-    field.classList.add(model.turn)
-    model.turn = model.turn === "black" ? "white" : "black"
+  disconnectedCallback() {
+    this.shadowRoot.querySelectorAll(".field").forEach(fieldNode => {
+      fieldNode.removeEventListener("click", handleFieldClick)
+    })
   }
 })
