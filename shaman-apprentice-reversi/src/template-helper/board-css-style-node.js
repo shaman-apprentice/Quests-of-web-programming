@@ -1,4 +1,5 @@
-export default  `
+const styleNode = document.createElement("style")
+styleNode.innerHTML = `
   .board {
     min-width: 100px;
     max-width: 500px;
@@ -35,3 +36,5 @@ export default  `
     background-color: white;
   }
 `
+
+export default styleNode

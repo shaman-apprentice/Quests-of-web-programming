@@ -6,6 +6,9 @@
   "author": "shaman-apprentice",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "webpack --watch"
+  },
   "devDependencies": {
     "webpack": "^4.19.0",
     "webpack-cli": "^3.1.0"
