@@ -11,6 +11,7 @@ function handleFieldClick(event) {
     fieldNode: event.currentTarget,
     y: event.currentTarget.dataset.y,
     x: event.currentTarget.dataset.x,
+    model,
   })
 }
 

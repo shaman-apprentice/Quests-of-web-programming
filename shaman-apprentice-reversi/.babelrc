@@ -1,0 +1,4 @@
+/* this babel is only due to nodes lack of es modules, and jest is run by node */
+{
+  "plugins": ["transform-es2015-modules-commonjs"]
+}
