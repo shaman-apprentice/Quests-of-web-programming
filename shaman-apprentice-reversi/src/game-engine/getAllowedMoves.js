@@ -1,136 +1,54 @@
+const directions = [
+  { yStep:  0, xStep:  1 }, // right
+  { yStep:  0, xStep: -1 }, // left
+  { yStep:  1, xStep:  0 }, // down
+  { yStep: -1, xStep:  0 }, // up
+  { yStep: -1, xStep:  1 }, // up right
+  { yStep:  1, xStep:  1 }, // down right
+  { yStep:  1, xStep: -1 }, // down left
+  { yStep: -1, xStep: -1 }, // up left
+]
+
+const isOnBoard = (y, x) =>
+  y >= 0 && y <= 7 && x >= 0 && x <= 7
+
+const isNeutralStone = (i) =>
+  i === 0
+
 export default function(board, turn) {
   const allowedMoves = []
 
   const isOwnStone = turn === "black" ? (i) => i === 1 : (i) => i === -1
   const isOpponentStone = turn === "black" ? (i) => i === -1 : (i) => i === 1
-  const isNeutralStone = (i) => i === 0
 
   for (let y = 0; y <= 7; y++) {
     for (let x = 0; x <= 7; x++) {
-      const curr = board[y][x]
+      if (!isNeutralStone(board[y][x]))
+        continue // already placed / for sure not allowed
 
-      if (!isNeutralStone(curr) )
-        continue
-
-      // check right
-      if (x < 6 && isOpponentStone(board[y][x+1])) {
-        for (let xRight = x + 2; xRight <= 7; xRight++) {
-          if (isOwnStone(board[y][xRight])) {
-            allowedMoves.push(`${y}-${x}`)
-            break
-          }
-          else if (isNeutralStone(board[y][xRight]))
-            break
+      directions.forEach( ({ yStep, xStep }) => {
+        let yLine = y + yStep
+        let xLine = x + xStep
+        if (!isOnBoard(yLine, xLine) || !isOpponentStone(board[yLine][xLine])) {
+          return // at least one stone to flip must exist
         }
-      }
 
-      // check left
-      if (x > 1 && isOpponentStone(board[y][x-1])) {
-        for (let xLeft = x - 2; xLeft >= 0; xLeft--) {
-          if (isOwnStone(board[y][xLeft])) {
-            allowedMoves.push(`${y}-${x}`)
-            break
-          }
-          else if (isNeutralStone(board[y][xLeft]))
-            break
-        }
-      }
+        while (isOnBoard(yLine, xLine)) {
+          if (isNeutralStone(board[yLine][xLine]))
+            return;
 
-      // check downwards
-      if (y < 6 && isOpponentStone(board[y+1][x])) {
-        for (let yDown = y + 2; yDown <= 7; yDown++) {
-          if (isOwnStone(board[yDown][x])) {
+          if (isOwnStone(board[yLine][xLine])) {
             allowedMoves.push(`${y}-${x}`)
-            break
+            return;
           }
-          else if (isNeutralStone(board[yDown][x] )) {
-            break
-          }
-        }
-      }
 
-      // check upwards
-      if (y > 1 && isOpponentStone(board[y-1][x])) {
-        for (let yUp = y - 2; yUp >= 0; yUp--) {
-          if (isOwnStone(board[yUp][x])) {
-            allowedMoves.push(`${y}-${x}`)
-            break
-          }
-          else if (isNeutralStone(board[yUp][x] )) {
-            break
-          }
+          yLine += yStep
+          xLine += xStep
         }
-      }
-
-      // check diagonal down right
-      if (y < 6 && x < 6 && isOpponentStone(board[y+1][x+1])) {
-        let yDiagonal = y + 2
-        let xDiagonal = x + 2
-        while (yDiagonal <= 7 && xDiagonal <= 7) {
-          if (isOwnStone(board[yDiagonal][xDiagonal])) {
-            allowedMoves.push(`${y}-${x}`)
-            break
-          }
-          else if (isNeutralStone(board[yDiagonal][xDiagonal])) {
-            break
-          }
-          yDiagonal += 1
-          xDiagonal += 1
-        }
-      }
-
-      // check diagonal down left
-      if (y < 6 && x > 1 && isOpponentStone(board[y+1][x-1])) {
-        let yDiagonal = y + 2
-        let xDiagonal = x - 2
-        while (yDiagonal <= 7 && xDiagonal >= 0) {
-          if (isOwnStone(board[yDiagonal][xDiagonal])) {
-            allowedMoves.push(`${y}-${x}`)
-            break
-          }
-          else if (isNeutralStone(board[yDiagonal][xDiagonal])) {
-            break
-          }
-          yDiagonal += 1
-          xDiagonal -= 1
-        }
-      }
-
-      // check diagonal up left
-      if (y > 1 && x > 1 && isOpponentStone(board[y-1][x-1])) {
-        let yDiagonal = y - 2
-        let xDiagonal = x - 2
-        while (yDiagonal >= 0 && xDiagonal >= 0) {
-          if (isOwnStone(board[yDiagonal][xDiagonal])) {
-            allowedMoves.push(`${y}-${x}`)
-            break
-          }
-          else if (isNeutralStone(board[yDiagonal][xDiagonal])) {
-            break
-          }
-          yDiagonal -= 1
-          xDiagonal -= 1
-        }
-      }
-
-      // check diagonal up right
-      if (y > 1 && x < 6 && isOpponentStone(board[y-1][x+1])) {
-        let yDiagonal = y - 2
-        let xDiagonal = x + 2
-        while (yDiagonal >= 0 && xDiagonal <= 7) {
-          if (isOwnStone(board[yDiagonal][xDiagonal])) {
-            allowedMoves.push(`${y}-${x}`)
-            break
-          }
-          else if (isNeutralStone(board[yDiagonal][xDiagonal])) {
-            break
-          }
-          yDiagonal -= 1
-          xDiagonal += 1
-        }
-      }
+      } )
 
     }
   }
+
   return allowedMoves
 }
