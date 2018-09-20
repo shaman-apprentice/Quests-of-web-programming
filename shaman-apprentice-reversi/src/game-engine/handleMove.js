@@ -1,7 +1,20 @@
-import model from "../model"
+import getAllowedMoves from "./getAllowedMoves"
+
+const getMove = (y, x, allowedMoves) =>
+  allowedMoves.find( move => move === `${y}-${x}` )
+
+let cachedAllowedMoves
 
 export default function({ fieldNode, x, y, model }) {
-  console.log(fieldNode, x, y)
+  cachedAllowedMoves = cachedAllowedMoves || getAllowedMoves(model.board, model.turn)
+  const move = getMove(y, x, cachedAllowedMoves);
+
+  if (!move)
+    return;
+  else
+    cachedAllowedMoves = undefined
+
   fieldNode.classList.add(model.turn)
+  console.log(fieldNode, x, y)
   model.turn = model.turn === "black" ? "white" : "black"
 }
