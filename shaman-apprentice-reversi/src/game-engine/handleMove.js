@@ -10,6 +10,7 @@ export default function({ fieldNode, x, y, model }) {
 
   placeStone({ fieldNode, x, y, model })
   flipStones(cachedAllowedMoves[`${y}-${x}`], model)
+  console.log(calcScore(model.board))
 
   model.turn = model.turn === "black" ? "white" : "black"
   cachedAllowedMoves = false
@@ -31,4 +32,12 @@ function flipStones(stonesToFlip, model) {
     target.classList.remove(otherColor)
     target.classList.add(model.turn)
   } )
+}
+
+function calcScore(board) {
+  return board.reduce( (sum, row) =>
+    row.reduce( (rowSum, i) =>
+      rowSum + i
+    , sum)
+  , 0)
 }
