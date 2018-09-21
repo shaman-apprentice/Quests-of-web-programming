@@ -1,8 +1,5 @@
 import getAllowedMoves from "./getAllowedMoves"
 
-const getMove = (y, x, allowedMoves) =>
-  allowedMoves.find( move => move === `${y}-${x}` )
-
 let cachedAllowedMoves
 
 export default function({ fieldNode, x, y, model }) {
@@ -11,20 +8,27 @@ export default function({ fieldNode, x, y, model }) {
   if (!cachedAllowedMoves[`${y}-${x}`])
     return
 
-  const otherColor = model.turn === "black" ? "white" : "black"
+  placeStone({ fieldNode, x, y, model })
+  flipStones(cachedAllowedMoves[`${y}-${x}`], model)
 
+  model.turn = model.turn === "black" ? "white" : "black"
+  cachedAllowedMoves = false
+}
+
+function placeStone({ fieldNode, x, y, model }) {
   fieldNode.classList.add(model.turn)
   model.board[y][x] = model.turn === "black" ? 1 : -1
+}
+
+function flipStones(stonesToFlip, model) {
   const reversiNode = document.querySelector("shaman-apprentice-reversi").shadowRoot
-  console.log(cachedAllowedMoves[`${y}-${x}`])
-  cachedAllowedMoves[`${y}-${x}`].forEach( stone => {
-    console.log(reversiNode.querySelector(`[data-y="${stone.y}"][data-x="${stone.x}"]`))
+  const fieldValue = model.turn === "black" ? 1 : -1
+  const otherColor = model.turn === "black" ? "white" : "black"
+
+  stonesToFlip.forEach( stone => {
     const target = reversiNode.querySelector(`[data-y="${stone.y}"][data-x="${stone.x}"]`)
-    model.board[stone.y][stone.x] = model.turn === "black" ? 1 : -1
+    model.board[stone.y][stone.x] = fieldValue
     target.classList.remove(otherColor)
     target.classList.add(model.turn)
   } )
-
-  model.turn = otherColor
-  cachedAllowedMoves = false
 }
