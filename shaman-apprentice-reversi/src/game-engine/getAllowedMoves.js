@@ -16,7 +16,7 @@ const isNeutralStone = (i) =>
   i === 0
 
 export default function(board, turn) {
-  const allowedMoves = []
+  const allowedMoves = {}
 
   const isOwnStone = turn === "black" ? (i) => i === 1 : (i) => i === -1
   const isOpponentStone = turn === "black" ? (i) => i === -1 : (i) => i === 1
@@ -33,15 +33,17 @@ export default function(board, turn) {
           return // at least one stone to flip must exist
         }
 
+        let stonesToFlip = []
         while (isOnBoard(yLine, xLine)) {
           if (isNeutralStone(board[yLine][xLine]))
-            return;
+            return
 
           if (isOwnStone(board[yLine][xLine])) {
-            allowedMoves.push(`${y}-${x}`)
-            return;
+            allowedMoves[`${y}-${x}`] = stonesToFlip
+            return
           }
 
+          stonesToFlip.push({ y: yLine, x: xLine })
           yLine += yStep
           xLine += xStep
         }

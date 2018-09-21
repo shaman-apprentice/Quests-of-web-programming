@@ -14,6 +14,7 @@ export default function({ fieldNode, x, y, model }) {
   else
     cachedAllowedMoves = undefined
 
+  // update board and flip in dom
   fieldNode.classList.add(model.turn)
   console.log(fieldNode, x, y)
   model.turn = model.turn === "black" ? "white" : "black"

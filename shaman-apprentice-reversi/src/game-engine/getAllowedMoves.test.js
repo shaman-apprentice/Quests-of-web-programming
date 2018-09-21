@@ -5,8 +5,8 @@ describe("allowed moves in start position", () => {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, -1, 1, 0, 0, 0],
-    [0, 0, 0, 1, -1, 0, 0, 0],
+    [0, 0, 0,-1, 1, 0, 0, 0],
+    [0, 0, 0, 1,-1, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
@@ -14,20 +14,21 @@ describe("allowed moves in start position", () => {
   const turn = "black"
 
   test("horizontal direction", () => {
-    const allowedMoves = getAllowedMoves(board, turn)
-    expect(allowedMoves).toContain("3-2")
-    expect(allowedMoves).toContain("4-5")
+    expect(getAllowedMoves(board, turn)).toMatchObject({
+      "3-2": [ { y: 3, x: 3 } ],
+      "4-5": [ { y: 4, x: 4 } ],
+    })
   })
 
   test("vertical direction", () => {
-    const allowedMoves = getAllowedMoves(board, turn)
-    expect(allowedMoves).toContain("2-3")
-    expect(allowedMoves).toContain("5-4")
+    expect(getAllowedMoves(board, turn)).toMatchObject({
+      "2-3": [ { y: 3, x: 3 } ],
+      "5-4": [ { y: 4, x: 4 } ],
+    })
   })
 
   test("4 moves are allowed", () => {
-    const allowedMoves = getAllowedMoves(board, turn)
-    expect(allowedMoves.length).toBe(4)
+    expect(Object.keys(getAllowedMoves(board, turn)).length).toBe(4)
   })
 })
 
@@ -45,14 +46,15 @@ describe("diagonal allowed moves downwards", () => {
   const turn = "black"
 
   test("down right", () => {
-    const allowedMoves = getAllowedMoves(board, turn)
-    expect(allowedMoves).toContain("2-2")
-    expect(allowedMoves).toContain("2-3")
+    expect(getAllowedMoves(board, turn)).toMatchObject({
+      "2-2": [ { y: 3, x: 3 } ],
+    })
   })
 
   test("down left", () => {
-    const allowedMoves = getAllowedMoves(board, turn)
-    expect(allowedMoves).toContain("2-5")
+    expect(getAllowedMoves(board, turn)).toMatchObject({
+      "2-5": [ { y: 3, x: 4 } ],
+    })
   })
 })
 
@@ -70,14 +72,14 @@ describe("diagonal allowed moves upwards", () => {
   const turn = "black"
 
   test("up left", () => {
-    const allowedMoves = getAllowedMoves(board, turn)
-    expect(allowedMoves).toContain("5-5")
-    expect(allowedMoves).toContain("5-4")
+    expect(getAllowedMoves(board, turn)).toMatchObject({
+      "5-5": [ { y: 4, x: 4 } ],
+    })
   })
 
   test("up right", () => {
-    const allowedMoves = getAllowedMoves(board, turn)
-    expect(allowedMoves).toContain("5-2")
-    expect(allowedMoves).toContain("5-3")
+    expect(getAllowedMoves(board, turn)).toMatchObject({
+      "5-2": [ { y: 4, x: 3} ],
+    })
   })
 })
