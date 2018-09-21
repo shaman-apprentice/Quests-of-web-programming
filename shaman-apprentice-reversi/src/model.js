@@ -1,5 +1,3 @@
-import { eventEmitter, eventTypes } from "./game-engine/eventEmitter"
-
 const board = [
   [0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0],
@@ -21,8 +19,6 @@ const allowedMoves = board.reduce( (acc, row, y) => {
 
 const model = {
   board,
-  eventEmitter,
-  eventTypes,
   allowedMoves,
   score: 0,
   turn: "black", // black := 1, white -1
