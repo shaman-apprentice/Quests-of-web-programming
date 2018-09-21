@@ -79,7 +79,25 @@ describe("diagonal allowed moves upwards", () => {
 
   test("up right", () => {
     expect(getAllowedMoves(board, turn)).toMatchObject({
-      "5-2": [ { y: 4, x: 3} ],
+      "5-2": [ { y: 4, x: 3 } ],
     })
+  })
+})
+
+test("stones of multiple directions are added to flip", () => {
+  const board = [
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1,-1, 0, 0, 0],
+    [0, 0, 0, 1, 1, 0, 0, 0],
+    [0, 0, 0, 1,-1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+  ]
+  const turn = "white"
+
+  expect(getAllowedMoves(board, turn)).toMatchObject({
+    "4-2": [ { y: 4, x: 3 }, { y: 3, x: 3 } ],
   })
 })

@@ -39,7 +39,9 @@ export default function(board, turn) {
             return
 
           if (isOwnStone(board[yLine][xLine])) {
-            allowedMoves[`${y}-${x}`] = stonesToFlip
+            allowedMoves[`${y}-${x}`] = allowedMoves[`${y}-${x}`] ?
+              allowedMoves[`${y}-${x}`].concat(stonesToFlip) :
+              stonesToFlip
             return
           }
 
