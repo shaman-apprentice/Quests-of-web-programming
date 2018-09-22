@@ -1,10 +1,15 @@
-import boardCssStyleNode from "./template-helper/board-css-style-node"
-import boardContentNode from "./template-helper/board-content-node"
+import boardCssStyleNode from "./gui/board-css-style-node"
+import boardContentNode from "./gui/board-content-node"
+import gameSettingsNode from "./gui/shaman-apprentice-reversi-game-settings"
 import handleMove from "./game-engine/handleMove"
 
 const template = document.createElement("template")
-template.content.appendChild(boardCssStyleNode)
-template.content.appendChild(boardContentNode)
+const boardSection = document.createElement("div") // for display: inline-block
+boardSection.setAttribute("style", "display: inline-block; width: 100%; max-width: 500px; vertical-align:top;")
+boardSection.appendChild(boardCssStyleNode)
+boardSection.appendChild(boardContentNode)
+template.content.appendChild(boardSection)
+template.content.appendChild(gameSettingsNode)
 
 function handleFieldClick(event) {
   handleMove({
