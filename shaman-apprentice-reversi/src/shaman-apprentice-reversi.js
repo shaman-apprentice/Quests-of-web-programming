@@ -28,10 +28,4 @@ window.customElements.define("shaman-apprentice-reversi", class extends HTMLElem
       fieldNode.addEventListener("click", handleFieldClick)
     })
   }
-
-/*  connectedCallback() {
-    this.shadowRoot.querySelectorAll(".field").forEach( fieldNode => {
-      fieldNode.addEventListener("click", handleFieldClick)
-    })
-  }*/
 })
