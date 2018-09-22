@@ -34,6 +34,11 @@ styleNode.innerHTML = `
   
   .field.white .stone {
     background-color: white;
+    transform: rotateY(180deg)
+  }
+  
+  .field .stone {
+    transition: all 1s linear
   }
 `
 

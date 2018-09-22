@@ -24,11 +24,14 @@ window.customElements.define("shaman-apprentice-reversi", class extends HTMLElem
     super()
     const shadowRoot = this.attachShadow({mode: "open"})
     shadowRoot.appendChild(template.content.cloneNode(true))
-  }
-
-  connectedCallback() {
-    this.shadowRoot.querySelectorAll(".field").forEach( fieldNode => {
+    shadowRoot.querySelectorAll(".field").forEach( fieldNode => {
       fieldNode.addEventListener("click", handleFieldClick)
     })
   }
+
+/*  connectedCallback() {
+    this.shadowRoot.querySelectorAll(".field").forEach( fieldNode => {
+      fieldNode.addEventListener("click", handleFieldClick)
+    })
+  }*/
 })
