@@ -1,7 +1,10 @@
+import gameEmitter, { Actions } from "./game-engine/model"
+
+import setBoardContent from "./controller/setBoardContent"
+
 import boardCssStyleNode from "./gui/board-css-style-node"
 import boardContentNode from "./gui/board-content-node"
 import gameSettingsNode from "./gui/shaman-apprentice-reversi-game-settings"
-import handleMove from "./game-engine/handleMove"
 
 const template = document.createElement("template")
 const boardSection = document.createElement("div") // for display: inline-block
@@ -11,21 +14,34 @@ boardSection.appendChild(boardContentNode)
 template.content.appendChild(boardSection)
 template.content.appendChild(gameSettingsNode)
 
-function handleFieldClick(event) {
-  handleMove({
-    fieldNode: event.currentTarget,
-    y: event.currentTarget.dataset.y,
-    x: event.currentTarget.dataset.x,
-  })
-}
 
 window.customElements.define("shaman-apprentice-reversi", class extends HTMLElement {
   constructor() {
     super()
+
     const shadowRoot = this.attachShadow({mode: "open"})
     shadowRoot.appendChild(template.content.cloneNode(true))
-    shadowRoot.querySelectorAll(".field").forEach( fieldNode => {
-      fieldNode.addEventListener("click", handleFieldClick)
+
+    this.boardNode = shadowRoot.querySelector(".board")
+
+    gameEmitter.on(Actions.modelUpdated, ({ board }) => {
+      setBoardContent(this.boardNode, board)
+    })
+    gameEmitter.emit(Actions.newGame)
+
+    gameEmitter.on(Actions.gameEnd, (model) => {
+      if (confirm(`Congratulation - ${getWinnerText(model.score)} by ${Math.abs(model.score)} points. \n New Game?` ))
+        console.log("hi")
+      else
+        console.log("bye")
     })
   }
 })
+
+const getWinnerText = (score) => {
+  if (score > 0)
+    return "Black has won"
+  if (score < 0)
+    return "White has won"
+  return "Black and White have won"
+}

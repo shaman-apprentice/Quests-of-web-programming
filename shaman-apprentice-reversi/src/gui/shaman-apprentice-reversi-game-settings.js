@@ -1,3 +1,5 @@
+import gameEmitter, { Actions } from "../game-engine/model"
+
 const template = document.createElement("template")
 template.innerHTML = `
   <style>
@@ -26,8 +28,33 @@ window.customElements.define("shaman-apprentice-reversi-game-settings", class ex
     super()
     const shadowRoot = this.attachShadow({mode: "open"})
     shadowRoot.appendChild(template.content.cloneNode(true))
+
+  }
+
+  connectedCallback() {
+    // register here, cause otherwise would also be called useless in template of shaman-apprentice-reversi
+
+    const newButton = this.shadowRoot.querySelector("#new-game")
+    newButton.addEventListener("click", () => {
+      gameEmitter.emit(Actions.newGame)
+    })
+
+    const whosToPlay = this.shadowRoot.querySelector("#whose-turn")
+    const score = this.shadowRoot.querySelector("#score")
+    gameEmitter.on(Actions.modelUpdated, (model) => {
+      whosToPlay.innerHTML = model.turn === 1 ? "BLACK TO PLAY" : "WHITE TO PLAY"
+      score.innerHTML = getScore(model.score)
+    })
   }
 })
+
+const getScore = (score) => {
+  if (score > 0)
+    return "BLACK +" + score
+  if (score < 0 )
+    return "White +" + score * -1
+  return "0"
+}
 
 const gameSettingsNode = document.createElement("shaman-apprentice-reversi-game-settings")
 export default gameSettingsNode

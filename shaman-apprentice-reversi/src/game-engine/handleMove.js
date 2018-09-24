@@ -1,44 +1,38 @@
-import model from "../model"
-import getAllowedMoves from "./getAllowedMoves"
+import getAllowedMoves from "../game-engine/getAllowedMoves"
 
-let cachedAllowedMoves
+/** @return true if move made, false otherwise */
+export default function (model, y, x) {
+  if (!model.allowedMoves[`${y}-${x}`])
+    return false;
 
-export default function({ fieldNode, x, y }) {
-  cachedAllowedMoves = cachedAllowedMoves || getAllowedMoves(model.board, model.turn)
-
-  if (!cachedAllowedMoves[`${y}-${x}`])
-    return
-
-  placeStone({ fieldNode, x, y })
-  flipStones(cachedAllowedMoves[`${y}-${x}`])
-  console.log(calcScore(model.board))
-
-  model.turn = model.turn === "black" ? "white" : "black"
-  cachedAllowedMoves = false
+  placeStone(model, y, x)
+  flipStones(model, model.allowedMoves[`${y}-${x}`])
+  model.score = calcScore(model.board)
+  switchTurn(model)
+  return true;
 }
 
-function placeStone({ fieldNode, x, y }) {
-  fieldNode.classList.add(model.turn)
-  model.board[y][x] = model.turn === "black" ? 1 : -1
-}
+const placeStone = (model, y, x) =>
+  model.board[y][x] = model.turn
 
-function flipStones(stonesToFlip) {
-  const reversiNode = document.querySelector("shaman-apprentice-reversi").shadowRoot
-  const fieldValue = model.turn === "black" ? 1 : -1
-  const otherColor = model.turn === "black" ? "white" : "black"
-
+const flipStones = (model, stonesToFlip) =>
   stonesToFlip.forEach( stone => {
-    const target = reversiNode.querySelector(`[data-y="${stone.y}"][data-x="${stone.x}"]`)
-    model.board[stone.y][stone.x] = fieldValue
-    target.classList.remove(otherColor)
-    target.classList.add(model.turn)
+    model.board[stone.y][stone.x] = model.turn;
   } )
-}
 
-function calcScore(board) {
-  return board.reduce( (sum, row) =>
+const calcScore = (board) =>
+  board.reduce( (sum, row) =>
     row.reduce( (rowSum, i) =>
       rowSum + i
     , sum)
   , 0)
+
+const switchTurn = (model) => {
+  model.turn *= -1
+  model.allowedMoves = getAllowedMoves(model)
+
+  if (Object.keys(model.allowedMoves).length === 0) { // u must pass :P
+    model.turn *= -1
+    model.allowedMoves = getAllowedMoves(model)
+  }
 }

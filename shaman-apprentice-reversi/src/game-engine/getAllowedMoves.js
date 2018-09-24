@@ -15,11 +15,14 @@ const isOnBoard = (y, x) =>
 const isNeutralStone = (i) =>
   i === 0
 
-export default function(board, turn) {
-  const allowedMoves = {}
+const isOwnStone = (turn, i) =>
+  turn === i
 
-  const isOwnStone = turn === "black" ? (i) => i === 1 : (i) => i === -1
-  const isOpponentStone = turn === "black" ? (i) => i === -1 : (i) => i === 1
+const isOpponentStone = (turn, i) =>
+  turn === -1 * i
+
+export default function({ board, turn }) {
+  const allowedMoves = {}
 
   for (let y = 0; y <= 7; y++) {
     for (let x = 0; x <= 7; x++) {
@@ -29,7 +32,7 @@ export default function(board, turn) {
       directions.forEach( ({ yStep, xStep }) => {
         let yLine = y + yStep
         let xLine = x + xStep
-        if (!isOnBoard(yLine, xLine) || !isOpponentStone(board[yLine][xLine])) {
+        if (!isOnBoard(yLine, xLine) || !isOpponentStone(turn, board[yLine][xLine])) {
           return // at least one stone to flip must exist
         }
 
@@ -38,7 +41,7 @@ export default function(board, turn) {
           if (isNeutralStone(board[yLine][xLine]))
             return
 
-          if (isOwnStone(board[yLine][xLine])) {
+          if (isOwnStone(turn, board[yLine][xLine])) {
             allowedMoves[`${y}-${x}`] = allowedMoves[`${y}-${x}`] ?
               allowedMoves[`${y}-${x}`].concat(stonesToFlip) :
               stonesToFlip
