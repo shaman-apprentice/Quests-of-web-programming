@@ -40,6 +40,11 @@ styleNode.innerHTML = `
   .field .stone {
     transition: all 1s linear
   }
+  
+  .field.last-move .stone{
+    border: 2px solid red;
+    margin: -1px 0 0 -1px;
+  }
 `
 
 export default styleNode

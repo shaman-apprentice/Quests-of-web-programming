@@ -24,16 +24,16 @@ window.customElements.define("shaman-apprentice-reversi", class extends HTMLElem
 
     this.boardNode = shadowRoot.querySelector(".board")
 
-    gameEmitter.on(Actions.modelUpdated, ({ board }) => {
-      setBoardContent(this.boardNode, board)
+    gameEmitter.on(Actions.modelUpdated, ({ board }, lastMove) => {
+      setBoardContent(this.boardNode, board, lastMove)
     })
     gameEmitter.emit(Actions.newGame)
 
     gameEmitter.on(Actions.gameEnd, (model) => {
-      if (confirm(`Congratulation - ${getWinnerText(model.score)} by ${Math.abs(model.score)} points. \n New Game?` ))
-        console.log("hi")
-      else
-        console.log("bye")
+      setTimeout(() => {
+        if (confirm(`Congratulation - ${getWinnerText(model.score)} by ${Math.abs(model.score)} points. \n New Game?`))
+          gameEmitter.emit(Actions.newGame)
+      }, 1500)
     })
   }
 })

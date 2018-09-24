@@ -39,10 +39,9 @@ export const Actions = {
 
 eventEmitter.on(Actions.makeMove, ({ y, x }) => {
   if (handleMove(_model, y, x))
-    eventEmitter.emit(Actions.modelUpdated, _model)
+    eventEmitter.emit(Actions.modelUpdated, _model, { y, x })
 
-  console.log(_model.allowedMoves)
-  if (_model.allowedMoves.length === 0)
+  if (Object.keys(_model.allowedMoves).length === 0)
     eventEmitter.emit(Actions.gameEnd, _model)
 })
 eventEmitter.on(Actions.newGame, () => {
