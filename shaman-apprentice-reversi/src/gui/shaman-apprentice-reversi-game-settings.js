@@ -1,5 +1,7 @@
 import gameEmitter, { Actions } from "../game-engine/model"
 
+import { getScore, getAIRow } from "./settingsHelper"
+
 const template = document.createElement("template")
 template.innerHTML = `
   <style>
@@ -7,9 +9,38 @@ template.innerHTML = `
       display: inline-block;
       padding-left: 2em;
     }
+    
     button {
-      margin: 1em;
+      margin: 0.5em;
       padding: 0.5em;
+      cursor: pointer;
+    }
+    
+    .ai-section {
+      border: 2px black dashed;
+      padding: 0.5em;
+      font-weight: bold;
+    }
+    
+    .ai-section div.color {
+      display: inline-block;
+      border: 1px solid black;
+      padding: 1em;
+      margin-left: 1em;
+    }
+    
+    .ai-section div.color.white {
+      color: black;
+      background-color: white;
+    }
+    
+    .ai-section div.color.black {
+      color: white;
+      background-color: black;
+    }
+    
+    .ai-section .selected {
+      background-color: aquamarine;
     }
   </style>
   
@@ -20,6 +51,7 @@ template.innerHTML = `
     </div>
     
     <button id="new-game">New Game</button>
+    <div class="ai-section">Set AIs:</div>
   </div>
 `
 
@@ -46,16 +78,16 @@ window.customElements.define("shaman-apprentice-reversi-game-settings", class ex
       whosToPlay.innerHTML = model.turn === 1 ? "BLACK TO PLAY" : "WHITE TO PLAY"
       score.innerHTML = getScore(model.score)
     })
+
+    const aiSection = this.shadowRoot.querySelector(".ai-section")
+    aiSection.appendChild(getAIRow("black"))
+    aiSection.appendChild(getAIRow("white"))
+
+    // hard coded start AIs so far:
+    aiSection.querySelector(".black-ai [data-name='Human']").classList.add("selected")
+    aiSection.querySelector(".white-ai [data-name='Gustav']").classList.add("selected")
   }
 })
-
-const getScore = (score) => {
-  if (score > 0)
-    return "BLACK +" + score
-  if (score < 0 )
-    return "White +" + score * -1
-  return "0"
-}
 
 const gameSettingsNode = document.createElement("shaman-apprentice-reversi-game-settings")
 export default gameSettingsNode

@@ -37,7 +37,7 @@ const eventEmitter = new EventEmitter()
 export const Actions = {
   makeMove: "makeMove", // { y, x }
   newGame: "newGame",
-  changeKI: "changeKI", // ("randomAI"|"monthyAI"|"greedyAI"|"greedy-cornerAI")
+  changeAI: "changeAI", // { ("white"|"black"), ("human|randomAI"|"monthyAI"|"greedyAI")
   modelUpdated: "modelUpdated",
   gameEnd: "gameEnd",
 }
@@ -55,13 +55,19 @@ eventEmitter.on(Actions.makeMove, ({ y, x }) => {
     eventEmitter.emit(Actions.makeMove, _model.ai["white"](_model.allowedMoves))
   }
   else if (_model.turn === 1 && _model.ai["black"]) {
-    eventEmitter.emit(Actions.makeMove, _model.ai["white"](_model.allowedMoves))
+    eventEmitter.emit(Actions.makeMove, _model.ai["black"](_model.allowedMoves))
   }
 })
 
 eventEmitter.on(Actions.newGame, () => {
   createModel()
   eventEmitter.emit(Actions.modelUpdated, _model)
+})
+
+eventEmitter.on(Actions.changeAI, (color, aiName) => {
+  _model.ai[color] = AIs[aiName]
+  if (_model.ai[color] && (_model.turn === 1 && color === "black" || _model.turn === -1 && color === "white"))
+    eventEmitter.emit(Actions.makeMove, _model.ai[color](_model.allowedMoves))
 })
 
 export default eventEmitter
