@@ -32,7 +32,8 @@ window.customElements.define("shaman-apprentice-reversi-game-settings", class ex
   }
 
   connectedCallback() {
-    // register here, cause otherwise would also be called useless in template of shaman-apprentice-reversi
+    // register here and not in constructor,
+    // cause otherwise would also be called useless in template of shaman-apprentice-reversi
 
     const newButton = this.shadowRoot.querySelector("#new-game")
     newButton.addEventListener("click", () => {
