@@ -2,7 +2,7 @@ import { greedyAI } from "./greedyAI"
 import transformKeyIntoMove from "./transformKeyIntoMove"
 
 
-export const cornerFirstAI = (allowedMoves) => {
+export const cornerFirstAI = ({ allowedMoves }) => {
   for (let key of corners) {
     if (key in allowedMoves)
       return transformKeyIntoMove(key)
@@ -13,7 +13,7 @@ export const cornerFirstAI = (allowedMoves) => {
       return transformKeyIntoMove(key)
   }
 
-  return greedyAI(allowedMoves)
+  return greedyAI({ allowedMoves })
 }
 
 const corners = [ "0-0", "0-7", "7-7", "7-0" ]

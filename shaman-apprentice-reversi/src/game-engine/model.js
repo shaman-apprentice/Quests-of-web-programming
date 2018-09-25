@@ -52,10 +52,10 @@ eventEmitter.on(Actions.makeMove, ({ y, x }) => {
   }
 
   if (_model.turn === -1 && _model.ai["white"]) {
-    eventEmitter.emit(Actions.makeMove, _model.ai["white"](_model.allowedMoves))
+    eventEmitter.emit(Actions.makeMove, _model.ai["white"](_model))
   }
   else if (_model.turn === 1 && _model.ai["black"]) {
-    eventEmitter.emit(Actions.makeMove, _model.ai["black"](_model.allowedMoves))
+    eventEmitter.emit(Actions.makeMove, _model.ai["black"](_model))
   }
 })
 
@@ -67,7 +67,7 @@ eventEmitter.on(Actions.newGame, () => {
 eventEmitter.on(Actions.changeAI, (color, aiName) => {
   _model.ai[color] = AIs[aiName]
   if (_model.ai[color] && (_model.turn === 1 && color === "black" || _model.turn === -1 && color === "white"))
-    eventEmitter.emit(Actions.makeMove, _model.ai[color](_model.allowedMoves))
+    eventEmitter.emit(Actions.makeMove, _model.ai[color](_model))
 })
 
 export default eventEmitter

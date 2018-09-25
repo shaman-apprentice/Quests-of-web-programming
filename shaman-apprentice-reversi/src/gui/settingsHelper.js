@@ -49,5 +49,5 @@ const aiMapping = {
   Gustav: "randomAI",
   Dagobert: "greedyAI",
   Donald: "cornerFirstAI",
-  "Beagle Boys": undefined,
+  "Beagle Boys": "monthyAI",
 }
