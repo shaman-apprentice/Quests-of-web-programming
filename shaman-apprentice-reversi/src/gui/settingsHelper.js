@@ -15,6 +15,7 @@ export const getAIRow = (color) => {
 
   result.appendChild(getButton(result, color, "Human", "I sure hope u know what u are doing..."))
   result.appendChild(getButton(result, color, "Gustav", "Plays random moves"))
+  result.appendChild(getButton(result, color, "Beagle Boys", "Monte carlos playing 100 games withs random moves"))
   result.appendChild(getButton(result, color, "Dagobert", "Turns maximal stones per move"))
   result.appendChild(getButton(result, color, "Donald", "Trys to play in the corner, then at the border and finally plays like Dagobert"))
 
@@ -46,6 +47,7 @@ const getButton = (aiRow, color, label, tootlip) => {
 const aiMapping = {
   Human: "human",
   Gustav: "randomAI",
-  Dagobert: undefined,
+  Dagobert: "greedyAI",
   Donald: undefined,
+  "Beagle Boys": undefined,
 }
