@@ -83,11 +83,20 @@ window.customElements.define("shaman-apprentice-reversi-game-settings", class ex
     aiSection.appendChild(getAIRow("black"))
     aiSection.appendChild(getAIRow("white"))
 
-    // hard coded start AIs so far:
     aiSection.querySelector(".black-ai [data-name='Human']").classList.add("selected")
     aiSection.querySelector(".white-ai [data-name='Gustav']").classList.add("selected")
+    gameEmitter.on(Actions.newGame, () => highlightStartAIs(aiSection))
   }
 })
+
+const highlightStartAIs = (aiSection) => {
+  aiSection.querySelectorAll(".selected").forEach( (node) =>
+    node.classList.remove("selected")
+  )
+  // hard coded start AIs so far:
+  aiSection.querySelector(".black-ai [data-name='Human']").classList.add("selected")
+  aiSection.querySelector(".white-ai [data-name='Gustav']").classList.add("selected")
+}
 
 const gameSettingsNode = document.createElement("shaman-apprentice-reversi-game-settings")
 export default gameSettingsNode
