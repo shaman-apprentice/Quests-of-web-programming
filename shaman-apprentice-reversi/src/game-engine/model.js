@@ -37,7 +37,7 @@ const eventEmitter = new EventEmitter()
 export const Actions = {
   makeMove: "makeMove", // { y, x }
   newGame: "newGame",
-  changeAI: "changeAI", // { ("white"|"black"), ("human|randomAI"|"monthyAI"|"greedyAI")
+  changeAI: "changeAI", // { ("white"|"black"), ("human|randomAI"|"monthyAI"|"greedyAI"|"cornerFirstAI")
   modelUpdated: "modelUpdated",
   gameEnd: "gameEnd",
 }
