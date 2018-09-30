@@ -2,16 +2,11 @@ import gameEmitter, { Actions } from "./game-engine/model"
 
 import setBoardContent from "./controller/setBoardContent"
 
-import boardCssStyleNode from "./gui/board-css-style-node"
-import boardContentNode from "./gui/board-content-node"
-import gameSettingsNode from "./gui/shaman-apprentice-reversi-game-settings"
+import boardContentNode from "./gui/boardContentNode"
+import gameSettingsNode from "./gui/settings/shaman-apprentice-reversi-game-settings"
 
 const template = document.createElement("template")
-const boardSection = document.createElement("div") // for display: inline-block
-boardSection.setAttribute("style", "display: inline-block; width: 100%; max-width: 500px; vertical-align:top;")
-boardSection.appendChild(boardCssStyleNode)
-boardSection.appendChild(boardContentNode)
-template.content.appendChild(boardSection)
+template.content.appendChild(boardContentNode)
 template.content.appendChild(gameSettingsNode)
 
 

@@ -1,6 +1,6 @@
 import getAllowedMoves from "../game-engine/getAllowedMoves"
 
-/** @return true if move made, false otherwise */
+/** @return {boolean} true if move made, false otherwise */
 export default function (model, y, x) {
   if (!model.allowedMoves[`${y}-${x}`])
     return false;

@@ -1,4 +1,4 @@
-import gameEmitter, { Actions } from "../game-engine/model"
+import gameEmitter, { Actions } from "../../game-engine/model"
 
 export const getScore = (score) => {
   if (score > 0)
