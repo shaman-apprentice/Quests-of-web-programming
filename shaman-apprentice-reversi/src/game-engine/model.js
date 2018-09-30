@@ -25,6 +25,7 @@ const initModel = {
 }
 
 let _model
+// todo parametrise
 const createModel = () => {
    _model = JSON.parse(JSON.stringify(initModel))
    _model.ai = {
@@ -42,9 +43,10 @@ export const Actions = {
   gameEnd: "gameEnd",
 }
 
-eventEmitter.on(Actions.makeMove, ({ y, x }) => {
-  if (handleMove(_model, y, x))
-    eventEmitter.emit(Actions.modelUpdated, _model, { y, x })
+eventEmitter.on(Actions.makeMove, (move) => {
+  if (move && handleMove(_model, move.y, move.x)) {
+    eventEmitter.emit(Actions.modelUpdated, _model, move)
+  }
 
   if (Object.keys(_model.allowedMoves).length === 0) {
     eventEmitter.emit(Actions.gameEnd, _model)
