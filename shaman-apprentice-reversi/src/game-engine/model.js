@@ -25,11 +25,11 @@ const initModel = {
 }
 
 let _model
-// todo parametrise
-const createModel = () => {
+const createModel = (ai1Name=undefined, ai2Name="randomAI") => {
    _model = JSON.parse(JSON.stringify(initModel))
    _model.ai = {
-     "white": AIs.randomAI,
+     "black": AIs [ai1Name],
+     "white": AIs [ai2Name],
    }
 }
 
@@ -61,8 +61,8 @@ eventEmitter.on(Actions.makeMove, (move) => {
   }
 })
 
-eventEmitter.on(Actions.newGame, () => {
-  createModel()
+eventEmitter.on(Actions.newGame, (ai1Name, ai2Name) => {
+  createModel(ai1Name, ai2Name)
   eventEmitter.emit(Actions.modelUpdated, _model)
 })
 
