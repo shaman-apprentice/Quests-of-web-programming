@@ -25,11 +25,11 @@ const initModel = {
 }
 
 let _model
-const createModel = (ai1Name=undefined, ai2Name="randomAI") => {
+const createModel = (ai1Name = undefined, ai2Name = "randomAI") => {
    _model = JSON.parse(JSON.stringify(initModel))
    _model.ai = {
-     "black": AIs [ai1Name],
-     "white": AIs [ai2Name],
+     "black": AIs[ai1Name],
+     "white": AIs[ai2Name],
    }
 }
 
