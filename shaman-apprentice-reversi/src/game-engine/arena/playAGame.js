@@ -1,7 +1,6 @@
 import gameEmitter, { Actions } from "../model"
 
 export default(aiName1, aiName2) => {
-  console.log(aiName1, aiName2)
   gameEmitter.emit(Actions.newGame, aiName1, aiName2)
 
   let gameResult = undefined
