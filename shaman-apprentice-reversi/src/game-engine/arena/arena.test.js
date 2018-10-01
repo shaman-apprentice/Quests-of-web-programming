@@ -1,13 +1,20 @@
+import { createGameEngine } from "../model"
+
 import playAGame from "./playAGame"
 import playXGames from "./playXGames"
 import playArena from "./playArena"
 
+let gameEngine
+beforeEach( () => {
+  gameEngine = createGameEngine()
+})
+
 test("result of playAGame is always an int", () => {
-  expect(typeof playAGame("randomAI", "randomAI")).toBe("number")
+  expect(typeof playAGame(gameEngine, "randomAI", "randomAI")).toBe("number")
 })
 
 test("result of playXGame is %", () => {
-  const winQuote = playXGames("randomAI", "randomAI", 2)
+  const winQuote = playXGames(gameEngine, "randomAI", "randomAI", 2)
   expect(winQuote >= 0).toBe(true)
   expect(winQuote <= 1).toBe(true)
 })

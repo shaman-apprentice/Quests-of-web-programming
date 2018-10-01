@@ -24,18 +24,7 @@ const initModel = {
   ai: {},
 }
 
-let _model
-const createModel = (ai1Name = undefined, ai2Name = "randomAI") => {
-   _model = JSON.parse(JSON.stringify(initModel))
-   _model.ai = {
-     "black": AIs[ai1Name],
-     "white": AIs[ai2Name],
-   }
-}
-
-const eventEmitter = new EventEmitter()
-
-export const Actions = {
+const Actions = {
   makeMove: "makeMove", // { y, x }
   newGame: "newGame",
   changeAI: "changeAI", // { ("white"|"black"), ("human|randomAI"|"monthyAI"|"greedyAI"|"cornerFirstAI")
@@ -43,33 +32,55 @@ export const Actions = {
   gameEnd: "gameEnd",
 }
 
-eventEmitter.on(Actions.makeMove, (move) => {
-  if (move && handleMove(_model, move.y, move.x)) {
-    eventEmitter.emit(Actions.modelUpdated, _model, move)
-  }
+/**
+* @return {EventEmitter}
+* */
+const createGameEngine = () => {
+  let _model
+  const gameEngine = new EventEmitter()
 
-  if (Object.keys(_model.allowedMoves).length === 0) {
-    eventEmitter.emit(Actions.gameEnd, _model)
-    return
-  }
+  gameEngine.on(Actions.makeMove, (move) => {
+    if (move && handleMove(_model, move.y, move.x)) {
+      gameEngine.emit(Actions.modelUpdated, _model, move)
+    }
 
-  if (_model.turn === -1 && _model.ai["white"]) {
-    eventEmitter.emit(Actions.makeMove, _model.ai["white"](_model))
-  }
-  else if (_model.turn === 1 && _model.ai["black"]) {
-    eventEmitter.emit(Actions.makeMove, _model.ai["black"](_model))
-  }
-})
+    if (Object.keys(_model.allowedMoves).length === 0) {
+      gameEngine.emit(Actions.gameEnd, _model)
+      return
+    }
 
-eventEmitter.on(Actions.newGame, (ai1Name, ai2Name) => {
-  createModel(ai1Name, ai2Name)
-  eventEmitter.emit(Actions.modelUpdated, _model)
-})
+    if (_model.turn === -1 && _model.ai["white"]) {
+      gameEngine.emit(Actions.makeMove, _model.ai["white"](_model))
+    }
+    else if (_model.turn === 1 && _model.ai["black"]) {
+      gameEngine.emit(Actions.makeMove, _model.ai["black"](_model))
+    }
+  })
 
-eventEmitter.on(Actions.changeAI, (color, aiName) => {
-  _model.ai[color] = AIs[aiName]
-  if (_model.ai[color] && (_model.turn === 1 && color === "black" || _model.turn === -1 && color === "white"))
-    eventEmitter.emit(Actions.makeMove, _model.ai[color](_model))
-})
+  gameEngine.on(Actions.newGame, (ai1Name, ai2Name) => {
+    _model = createModel(ai1Name, ai2Name)
+    gameEngine.emit(Actions.modelUpdated, _model)
+  })
 
-export default eventEmitter
+  gameEngine.on(Actions.changeAI, (color, aiName) => {
+    _model.ai[color] = AIs[aiName]
+    if (_model.ai[color] && (_model.turn === 1 && color === "black" || _model.turn === -1 && color === "white"))
+      gameEngine.emit(Actions.makeMove, _model.ai[color](_model))
+  })
+
+  return gameEngine
+}
+
+const createModel = (ai1Name = undefined, ai2Name = "randomAI") => {
+   const model = JSON.parse(JSON.stringify(initModel))
+   model.ai = {
+     "black": AIs[ai1Name],
+     "white": AIs[ai2Name],
+   }
+   return model
+}
+
+export { Actions, createGameEngine }
+// for legacy and cause of singleton anyway so fat
+const defaultGameEmitter = createGameEngine()
+export default defaultGameEmitter
