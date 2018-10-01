@@ -6,13 +6,12 @@ import handleMove from "../handleMove"
 export const monthyAI = (model) => {
   const scoresOfCandiates = {}
   for (let candidate of Object.keys(model.allowedMoves)) {
-    let origModel = JSON.parse(JSON.stringify(model))
     const move = transformKeyIntoMove(candidate)
-    handleMove(origModel, move.y, move.x)
 
     let scoreOfCandi = 0;
     for (let i = 0; i < 100; i++) {
-      let modelOfCandi = JSON.parse(JSON.stringify(origModel))
+      let modelOfCandi = JSON.parse(JSON.stringify(model))
+      handleMove(modelOfCandi, move.y, move.x)
       playRandomGame(modelOfCandi)
       scoreOfCandi += interpreteScore(modelOfCandi.score, model.turn)
     }
