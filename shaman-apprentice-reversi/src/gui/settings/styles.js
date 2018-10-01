@@ -37,6 +37,23 @@ styles.innerHTML = `
   .ai-section .selected {
     background-color: aquamarine;
   }
+  
+  table {
+    margin: 2em;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+      border: 1px solid black;
+  }
+  
+  th, td {
+    padding: 0.5em;
+    text-align: center;
+  }
 `
 
 export default styles

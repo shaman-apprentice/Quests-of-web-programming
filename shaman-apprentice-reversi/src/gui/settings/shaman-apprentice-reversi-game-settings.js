@@ -1,10 +1,14 @@
 import gameEmitter, { Actions } from "../../game-engine/model"
 
 import { getScore, getAIRow } from "./settingsHelper"
+import getArenaEvaluation from "./getArenaEvaluation"
 import styleNode from "./styles"
 
 const template = document.createElement("template")
-template.innerHTML = `
+template.content.appendChild(styleNode)
+const wrapper = document.createElement("div")
+wrapper.setAttribute("class", "wrapper")
+wrapper.innerHTML = `
   <div class="wrapper">
     <h1>An awesome game of reversi</h1>
     <div>
@@ -15,7 +19,8 @@ template.innerHTML = `
     <div class="ai-section">Set AIs:</div>
   </div>
 `
-template.content.appendChild(styleNode)
+wrapper.append(getArenaEvaluation())
+template.content.appendChild(wrapper)
 
 window.customElements.define("shaman-apprentice-reversi-game-settings", class extends HTMLElement {
   constructor() {
