@@ -1,3 +1,4 @@
+import * as AIs from "../ai"
 import { createGameEngine } from "../model"
 
 import playAGame from "./playAGame"
@@ -22,4 +23,11 @@ test("result of playXGame is %", () => {
 test("arena plays all possible matches", () => {
   const winQuotes = playArena(["randomAI", "greedyAI", "cornerFirstAI"], 2)
   expect(Object.keys(winQuotes).length).toBe(6)
+})
+
+test.only("make quotes", () => {
+  const ais = Object.keys(AIs)
+  console.log(ais)
+  const winQuotes = playArena(ais, 1000)
+  console.log(winQuotes)
 })
