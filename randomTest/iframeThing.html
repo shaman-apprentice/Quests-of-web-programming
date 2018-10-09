@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://unpkg.com/mocha@5.2.0/mocha.css" rel="stylesheet" /> <!-- in dynmaic -->
+  <script>
+    if (parent === window.parent) {
+      const testScripts = [
+        "sayHi.js",
+        "https://unpkg.com/chai/chai.js",
+        "https://unpkg.com/mocha@5.2.0/mocha.js",
+      ]
+
+      testScripts.forEach( (src) => {
+        const req = new XMLHttpRequest();
+        req.open('GET', src, false);
+        req.onreadystatechange = function () {
+          if (req.readyState == 4) {
+            const s = document.createElement("script");
+            s.appendChild(document.createTextNode(req.responseText));
+            document.head.appendChild(s);
+          }
+        };
+        req.send(null)
+      } )
+
+/*      testScripts.forEach( (src) => {
+        const se = document.createElement('script');
+        se.setAttribute("type", "text/javascript")
+        se.async = false
+        se.defer = true
+        se.setAttribute("src", src)
+        document.head.appendChild(se)
+      } )*/
+
+      console.log("after script")
+    }
+    else {
+      console.log(parent)
+      describe = parent.describe
+      it = parent.it
+      chai = parent.chai
+    }
+
+    console.log(document.querySelectorAll("script"))
+  </script>
+
+</head>
+<body>
+  <script>
+    console.log("fst thing in body")
+    mocha.setup('bdd')
+    describe("test in iframe", () => {
+      console.log("hi in describe")
+      it("a is undefined", () => {
+        chai.expect(document.a).to.equal(undefined)
+      })
+      console.log("by from describe")
+    })
+  </script>
+
+  <div>hi from iframe</div>
+
+  <div id="mocha"></div>
+  <script>
+      mocha.run()
+  </script>
+</body>
+</html>

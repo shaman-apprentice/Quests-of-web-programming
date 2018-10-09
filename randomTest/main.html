@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://unpkg.com/mocha@5.2.0/mocha.css" rel="stylesheet" />
+  <script src="https://unpkg.com/chai/chai.js"></script>
+  <script src="https://unpkg.com/mocha@5.2.0/mocha.js"></script>
+  <script>mocha.setup('bdd')</script>
+</head>
+<body>
+  <script>
+    var a = 1;
+    console.log("a in main", a)
+  </script>
+  <div>hi from main</div>
+
+
+  <iframe src="iframeThing.html"></iframe>
+  <script>console.log("direct after iframe")</script>
+
+  <script>
+    describe("test in main", () => {
+      it("a === 1", () => {
+        chai.expect(a).to.equal(1)
+      })
+    })
+  </script>
+
+  <div id="mocha"></div>
+  <script>
+    console.log("mocha begin")
+    mocha.run()
+    console.log("mocha finished")
+    console.log(mocha)
+  </script>
+</body>
+</html>
