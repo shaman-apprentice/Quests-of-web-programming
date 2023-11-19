@@ -1,0 +1,1 @@
+generated with `npx -p svg-to-ts svg-to-ts-files -t TechIconName -p techIcon -i TechIcon -s './icons/*.svg' -o icons-dist --modelFileName techIcons.model --exportCompleteIconSet true`

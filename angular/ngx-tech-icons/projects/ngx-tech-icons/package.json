@@ -1,0 +1,15 @@
+{
+  "name": "ngx-tech-icons",
+  "version": "0.0.1",
+  "scripts": {
+    "storybook": "start-storybook -p 6006"
+  },
+  "peerDependencies": {
+    "@angular/common": "^17.0.0",
+    "@angular/core": "^17.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

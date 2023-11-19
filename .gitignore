@@ -2,3 +2,4 @@ node_modules/
 .idea/
 yarn-error.log
 *.js.map
+angular/ngx-tech-icons/projects/ngx-tech-icons/documentation.json
